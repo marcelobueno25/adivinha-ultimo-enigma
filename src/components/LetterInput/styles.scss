@@ -13,3 +13,10 @@
   background-color: gray;
   cursor: default;
 }
+
+.letter-input:disabled:focus,
+.letter-input:disabled:focus-visible,
+.letter-input:disabled:hover {
+  border: none !important;
+  outline: none !important;
+}

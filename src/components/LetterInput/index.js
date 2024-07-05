@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import "./styles.scss";
+import { TextField } from "@mui/material";
 
 const LetterInput = forwardRef(
   ({ index, value, onChange, onKeyUp, disabled }, ref) => {
@@ -11,16 +11,46 @@ const LetterInput = forwardRef(
     };
 
     return (
-      <input
-        ref={ref}
-        type="text"
-        maxLength="1"
+      <TextField
+        inputRef={ref}
+        variant="outlined"
+        inputProps={{
+          maxLength: 1,
+          style: {
+            textAlign: "center",
+            fontSize: "24px",
+            width: "40px",
+            height: "40px",
+          },
+        }}
         value={value}
         onChange={handleChange}
         onKeyUp={(e) => onKeyUp(e, index)}
         onFocus={(e) => e.target.select()}
-        className="letter-input"
         disabled={disabled}
+        sx={{
+          m: 0.5,
+          "& .MuiOutlinedInput-root": {
+            "& fieldset": {
+              borderColor: "white",
+            },
+            "&:hover fieldset": {
+              borderColor: "white",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "white",
+            },
+            backgroundColor: "black",
+            color: "white",
+          },
+          "& .Mui-disabled": {
+            backgroundColor: "gray",
+            cursor: "default",
+          },
+          "& .MuiInputBase-input.Mui-disabled": {
+            WebkitTextFillColor: "white",
+          },
+        }}
       />
     );
   }
