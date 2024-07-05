@@ -11,6 +11,8 @@ import {
   DialogTitle,
 } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Progress from "../Progress";
+import CongratulationsModal from "../CongratulationsModal";
 const theme = createTheme({
   palette: {
     primary: {
@@ -23,11 +25,11 @@ const theme = createTheme({
 });
 
 const wordsList = [
-  { word: "EU TE AMO", hint: "Uma expressão romântica em português" },
   {
     word: "REACT",
     hint: "Uma biblioteca JavaScript para construir interfaces de usuário",
   },
+  { word: "EU TE AMO", hint: "Uma expressão romântica em português" },
 ];
 
 const App = () => {
@@ -116,6 +118,7 @@ const App = () => {
         p={2}
         sx={{ textAlign: "center" }}
       >
+        <Progress currentWordIndex={currentWordIndex} wordsList={wordsList} />
         <Typography variant="h5" gutterBottom>
           Dica: {wordsList[currentWordIndex].hint}
         </Typography>
@@ -141,17 +144,7 @@ const App = () => {
           </Typography>
         )}
       </Box>
-      <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Parabéns!</DialogTitle>
-        <DialogContent>
-          <DialogContentText>Você acertou todas as palavras!</DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            OK
-          </Button>
-        </DialogActions>
-      </Dialog>
+      <CongratulationsModal open={open} onClose={handleClose} />
     </ThemeProvider>
   );
 };
