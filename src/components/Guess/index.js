@@ -93,11 +93,12 @@ const App = () => {
         bgcolor="#333"
         color="white"
         p={2}
+        sx={{ textAlign: "center" }}
       >
         <Typography variant="h5" gutterBottom>
           Dica: {wordsList[currentWordIndex].hint}
         </Typography>
-        <Box display="flex" mb={2}>
+        <Box display="flex" flexWrap="wrap" justifyContent="center" mb={2}>
           {wordsList[currentWordIndex].word.split("").map((letter, index) => (
             <LetterInput
               key={index}
