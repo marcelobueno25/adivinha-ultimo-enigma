@@ -75,6 +75,10 @@ const App = () => {
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % wordsList.length);
     } else {
       setMessage("Incorreto. Tente novamente.");
+      const word = wordsList[currentWordIndex].word;
+      const lettersArray = Array(word.length).fill("");
+      setLetters(lettersArray);
+      inputRefs.current[0]?.focus();
     }
   };
 
