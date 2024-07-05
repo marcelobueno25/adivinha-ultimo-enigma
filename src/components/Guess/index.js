@@ -1,6 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import LetterInput from "../LetterInput";
-import { Box, Button, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Typography,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
@@ -15,19 +24,17 @@ const theme = createTheme({
 
 const wordsList = [
   { word: "EU TE AMO", hint: "Uma expressão romântica em português" },
-  { word: "LAAJA", hint: "Uma palavra em outra língua" },
   {
     word: "REACT",
     hint: "Uma biblioteca JavaScript para construir interfaces de usuário",
   },
-  { word: "JAVASCRIPT", hint: "A linguagem de programação do navegador" },
-  { word: "CODING", hint: "O que você está fazendo agora" },
 ];
 
 const App = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [letters, setLetters] = useState([]);
   const [message, setMessage] = useState("");
+  const [open, setOpen] = useState(false);
   const inputRefs = useRef([]);
 
   useEffect(() => {
@@ -72,7 +79,11 @@ const App = () => {
     );
     if (isCorrect) {
       setMessage("Correto!");
-      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % wordsList.length);
+      if (currentWordIndex + 1 === wordsList.length) {
+        setOpen(true);
+      } else {
+        setCurrentWordIndex((prevIndex) => (prevIndex + 1) % wordsList.length);
+      }
     } else {
       setMessage("Incorreto. Tente novamente.");
       const word = wordsList[currentWordIndex].word;
@@ -80,6 +91,16 @@ const App = () => {
       setLetters(lettersArray);
       inputRefs.current[0]?.focus();
     }
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setCurrentWordIndex(0);
+    setMessage("");
+    const word = wordsList[0].word;
+    const lettersArray = Array(word.length).fill("");
+    setLetters(lettersArray);
+    inputRefs.current[0]?.focus();
   };
 
   return (
@@ -120,6 +141,17 @@ const App = () => {
           </Typography>
         )}
       </Box>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Parabéns!</DialogTitle>
+        <DialogContent>
+          <DialogContentText>Você acertou todas as palavras!</DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            OK
+          </Button>
+        </DialogActions>
+      </Dialog>
     </ThemeProvider>
   );
 };
