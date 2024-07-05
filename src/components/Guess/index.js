@@ -1,15 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import LetterInput from "../LetterInput";
-import {
-  Box,
-  Button,
-  Typography,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-} from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Progress from "../Progress";
 import CongratulationsModal from "../CongratulationsModal";
@@ -74,6 +65,12 @@ const App = () => {
     }
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSubmit();
+    }
+  };
+
   const handleSubmit = () => {
     const currentWord = wordsList[currentWordIndex].word.split("");
     const isCorrect = currentWord.every(
@@ -130,6 +127,7 @@ const App = () => {
               value={letter === " " ? " " : letters[index]}
               onChange={handleChange}
               onKeyUp={handleKeyUp}
+              onKeyPress={handleKeyPress}
               ref={(el) => (inputRefs.current[index] = el)}
               disabled={letter === " "}
             />

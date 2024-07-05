@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import { TextField } from "@mui/material";
 
 const LetterInput = forwardRef(
-  ({ index, value, onChange, onKeyUp, disabled }, ref) => {
+  ({ index, value, onKeyPress, onChange, onKeyUp, disabled }, ref) => {
     const handleChange = (e) => {
       const newValue = e.target.value;
       if (/^[A-Za-z]$/.test(newValue) || newValue === "") {
@@ -27,6 +27,7 @@ const LetterInput = forwardRef(
         onChange={handleChange}
         onKeyUp={(e) => onKeyUp(e, index)}
         onFocus={(e) => e.target.select()}
+        onKeyPress={(e) => onKeyPress(e, index)}
         disabled={disabled}
         sx={{
           m: 0.5,
