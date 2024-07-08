@@ -8,10 +8,13 @@ import {
   DialogTitle,
   Button,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const CongratulationsModal = ({ open, onClose }) => {
+  const navigate = useNavigate();
+
   const handleSurprise = () => {
-    window.location.href = "https://www.google.com/"; // replace with your surprise link
+    navigate("/reveal");
   };
 
   return (

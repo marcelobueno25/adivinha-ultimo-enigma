@@ -180,7 +180,7 @@ const Guess = () => {
         <Box display="flex" flexWrap="wrap" justifyContent="center" mb={2}>
           {wordsList[currentWordIndex].word.split("").map((letter, index) => (
             <LetterInput
-              key={index}
+              key={`${currentWordIndex}-${index}`}
               index={index}
               value={letter === " " ? " " : letters[index]}
               onChange={handleChange}

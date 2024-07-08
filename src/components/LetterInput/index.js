@@ -14,9 +14,10 @@ const LetterInput = forwardRef(
 
     return (
       <motion.div
+        key={index}
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.3, delay: index * 0.1 }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
       >
         <TextField
           inputRef={ref}
