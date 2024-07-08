@@ -43,12 +43,21 @@ const wordsList = [
   },
 ];
 
-const App = () => {
+const Guess = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [letters, setLetters] = useState([]);
   const [message, setMessage] = useState("");
   const [open, setOpen] = useState(false);
   const inputRefs = useRef([]);
+  const messageTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (messageTimeoutRef.current) {
+        clearTimeout(messageTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const word = wordsList[currentWordIndex].word;
@@ -97,7 +106,7 @@ const App = () => {
   const handleSubmit = () => {
     const isAllFieldsFilled = letters.every((letter) => letter !== "");
     if (!isAllFieldsFilled) {
-      setMessage("Preencha os campos.");
+      showMessage("Preencha os campos");
       return;
     }
 
@@ -106,19 +115,29 @@ const App = () => {
       (letter, index) => letter === " " || letter === letters[index]
     );
     if (isCorrect) {
-      setMessage("Correto!");
+      showMessage("Correto!");
       if (currentWordIndex + 1 === wordsList.length) {
         setOpen(true);
       } else {
         setCurrentWordIndex((prevIndex) => (prevIndex + 1) % wordsList.length);
       }
     } else {
-      setMessage("Incorreto. Tente novamente.");
+      showMessage("Incorreto. Tente novamente.");
       const word = wordsList[currentWordIndex].word;
       const lettersArray = Array(word.length).fill("");
       setLetters(lettersArray);
       inputRefs.current[0]?.focus();
     }
+  };
+
+  const showMessage = (msg) => {
+    setMessage(msg);
+    if (messageTimeoutRef.current) {
+      clearTimeout(messageTimeoutRef.current);
+    }
+    messageTimeoutRef.current = setTimeout(() => {
+      setMessage("");
+    }, 2000);
   };
 
   const handleClose = () => {
@@ -183,4 +202,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Guess;
