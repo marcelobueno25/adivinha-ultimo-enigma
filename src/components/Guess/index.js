@@ -34,7 +34,7 @@ const wordsList = [
     hint: "Enigma 2",
   },
   {
-    word: "GATO",
+    word: "GATA",
     hint: "Enigma 1",
   },
   {
