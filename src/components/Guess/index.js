@@ -40,7 +40,7 @@ const wordsList = [
   },
   {
     word: "MARIE",
-    hint: "Secreto",
+    hint: "Filme",
   },
 ];
 
@@ -174,7 +174,7 @@ const Guess = () => {
         <Progress currentWordIndex={currentWordIndex} wordsList={wordsList} />
         <Box mb={5}>
           <Typography variant="h5" gutterBottom>
-            💖 Dica: {wordsList[currentWordIndex].hint} 💖
+            💖 {wordsList[currentWordIndex].hint} 💖
           </Typography>
         </Box>
         <Box display="flex" flexWrap="wrap" justifyContent="center" mb={2}>
