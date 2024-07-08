@@ -55,6 +55,9 @@ const App = () => {
     const lettersArray = Array(word.length).fill("");
     setLetters(lettersArray);
     inputRefs.current = inputRefs.current.slice(0, lettersArray.length);
+    if (inputRefs.current[0]) {
+      inputRefs.current[0].focus();
+    }
   }, [currentWordIndex]);
 
   const handleChange = (value, index) => {
