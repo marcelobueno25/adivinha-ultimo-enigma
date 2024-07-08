@@ -18,7 +18,7 @@ const CongratulationsModal = ({ open, onClose }) => {
     <>
       <Dialog
         open={open}
-        onClose={onClose}
+        //onClose={onClose}
         PaperProps={{
           style: {
             backgroundColor: "#333",

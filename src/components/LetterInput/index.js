@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
 import { TextField } from "@mui/material";
+import { pink } from "@mui/material/colors";
 
 const LetterInput = forwardRef(
   ({ index, value, onKeyPress, onChange, onKeyUp, disabled }, ref) => {
@@ -18,9 +19,14 @@ const LetterInput = forwardRef(
           maxLength: 1,
           style: {
             textAlign: "center",
-            fontSize: "24px",
-            width: "40px",
-            height: "40px",
+            margin: "0 2px",
+            fontSize: "1.5rem",
+            fontFamily: "Cursive, Arial",
+            color: pink[700],
+            borderRadius: "8px",
+            outline: "none",
+            width: "2ch",
+            height: "2ch",
           },
         }}
         value={value}
@@ -33,23 +39,24 @@ const LetterInput = forwardRef(
           m: 0.5,
           "& .MuiOutlinedInput-root": {
             "& fieldset": {
-              borderColor: "white",
+              borderColor: pink[300],
             },
             "&:hover fieldset": {
-              borderColor: "white",
+              borderColor: pink[500],
             },
             "&.Mui-focused fieldset": {
-              borderColor: "white",
+              borderColor: pink[700],
             },
-            backgroundColor: "black",
             color: "white",
           },
           "& .Mui-disabled": {
-            backgroundColor: "gray",
+            WebkitTextFillColor: pink[300],
+            backgroundColor: pink[300],
             cursor: "default",
           },
           "& .MuiInputBase-input.Mui-disabled": {
-            WebkitTextFillColor: "white",
+            WebkitTextFillColor: pink[300],
+            backgroundColor: pink[300],
           },
         }}
       />

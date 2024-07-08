@@ -1,16 +1,29 @@
 import React, { useState, useEffect, useRef } from "react";
 import LetterInput from "../LetterInput";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography, CssBaseline } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Progress from "../Progress";
 import CongratulationsModal from "../CongratulationsModal";
+
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#ffffff",
+      main: "#ff6f61", // A soft romantic red
     },
     secondary: {
-      main: "#f50057",
+      main: "#ffc1e3", // A soft pink
+    },
+  },
+  typography: {
+    fontFamily: "Cursive, Arial",
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: "20px",
+        },
+      },
     },
   },
 });
@@ -111,20 +124,21 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Box
         display="flex"
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
         height="100vh"
-        bgcolor="#333"
-        color="white"
+        bgcolor="#ffe4e1"
+        color="#4b2e83"
         p={2}
         sx={{ textAlign: "center" }}
       >
         <Progress currentWordIndex={currentWordIndex} wordsList={wordsList} />
         <Typography variant="h5" gutterBottom>
-          Dica: {wordsList[currentWordIndex].hint}
+          💖 Dica: {wordsList[currentWordIndex].hint} 💖
         </Typography>
         <Box display="flex" flexWrap="wrap" justifyContent="center" mb={2}>
           {wordsList[currentWordIndex].word.split("").map((letter, index) => (
