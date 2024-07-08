@@ -41,7 +41,7 @@ const CongratulationsModal = ({ open, onClose }) => {
             }}
           >
             Você acertou todas as palavras! <br />
-            Clique no botão para Descobrir a Surpresa!
+            Clique no botão para Descobrir a Presente!
           </DialogContentText>
         </DialogContent>
         <DialogActions

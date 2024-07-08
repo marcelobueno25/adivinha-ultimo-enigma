@@ -73,9 +73,6 @@ const Reveal = () => {
         p={10}
         sx={{ textAlign: "center" }}
       >
-        <Typography variant="h2" gutterBottom>
-          Presente!
-        </Typography>
         <Typography variant="h4" mb={2}>
           {hintTitles[currentHintIndex]}
         </Typography>
