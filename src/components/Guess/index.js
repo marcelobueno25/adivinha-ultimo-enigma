@@ -31,16 +31,16 @@ const theme = createTheme({
 
 const wordsList = [
   {
-    word: "DISNEY",
-    hint: "Enigma 2",
-  },
-  {
     word: "GATA",
     hint: "Enigma 1",
   },
   {
+    word: "DISNEY",
+    hint: "Enigma 2",
+  },
+  {
     word: "MARIE",
-    hint: "Filme",
+    hint: "Qual base nesses Enigmas qual o Filme?",
   },
 ];
 
