@@ -21,7 +21,6 @@ const CongratulationsModal = ({ open, onClose }) => {
     <>
       <Dialog
         open={open}
-        //onClose={onClose}
         PaperProps={{
           style: {
             backgroundColor: "#333",
@@ -41,7 +40,8 @@ const CongratulationsModal = ({ open, onClose }) => {
               fontSize: "1.2rem",
             }}
           >
-            Você acertou todas as palavras! Parabéns por completar o desafio.
+            Você acertou todas as palavras! <br />
+            Clique no botão para Descobrir a Surpresa!
           </DialogContentText>
         </DialogContent>
         <DialogActions
