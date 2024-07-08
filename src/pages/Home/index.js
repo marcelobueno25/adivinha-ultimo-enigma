@@ -4,7 +4,11 @@ import Guess from "../../components/Guess";
 import "./styles.scss";
 
 const Home = () => {
-  return <Guess />;
+  return (
+    <div className="containerHome">
+      <Guess />
+    </div>
+  );
 };
 
 export default Home;

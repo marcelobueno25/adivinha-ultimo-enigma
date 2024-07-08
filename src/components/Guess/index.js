@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import LetterInput from "../LetterInput";
 import { Box, Button, Typography, CssBaseline } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Progress from "../Progress";
 import CongratulationsModal from "../CongratulationsModal";
+import LetterInput from "../LetterInput";
 
 const theme = createTheme({
   palette: {
@@ -95,6 +95,12 @@ const App = () => {
   };
 
   const handleSubmit = () => {
+    const isAllFieldsFilled = letters.every((letter) => letter !== "");
+    if (!isAllFieldsFilled) {
+      setMessage("Preencha os campos.");
+      return;
+    }
+
     const currentWord = wordsList[currentWordIndex].word.split("");
     const isCorrect = currentWord.every(
       (letter, index) => letter === " " || letter === letters[index]
@@ -133,16 +139,20 @@ const App = () => {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        height="100vh"
+        width="100%"
+        maxWidth={900}
+        borderRadius={10}
         bgcolor="#ffe4e1"
         color="#4b2e83"
-        p={2}
+        p={10}
         sx={{ textAlign: "center" }}
       >
         <Progress currentWordIndex={currentWordIndex} wordsList={wordsList} />
-        <Typography variant="h5" gutterBottom>
-          💖 Dica: {wordsList[currentWordIndex].hint} 💖
-        </Typography>
+        <Box mb={5}>
+          <Typography variant="h5" gutterBottom>
+            💖 Dica: {wordsList[currentWordIndex].hint} 💖
+          </Typography>
+        </Box>
         <Box display="flex" flexWrap="wrap" justifyContent="center" mb={2}>
           {wordsList[currentWordIndex].word.split("").map((letter, index) => (
             <LetterInput
@@ -157,9 +167,11 @@ const App = () => {
             />
           ))}
         </Box>
-        <Button variant="contained" color="primary" onClick={handleSubmit}>
-          OK
-        </Button>
+        <Box my={2}>
+          <Button variant="contained" color="primary" onClick={handleSubmit}>
+            OK
+          </Button>
+        </Box>
         {message && (
           <Typography variant="h6" mt={2}>
             {message}
