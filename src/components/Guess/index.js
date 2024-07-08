@@ -40,7 +40,7 @@ const wordsList = [
   },
   {
     word: "MARIE",
-    hint: "Qual base nesses Enigmas qual o Filme?",
+    hint: "Com base nesses Enigmas qual o Filme?",
   },
 ];
 
