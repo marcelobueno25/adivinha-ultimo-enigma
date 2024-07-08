@@ -17,10 +17,17 @@ const theme = createTheme({
 
 const wordsList = [
   {
-    word: "REACT",
-    hint: "Uma biblioteca JavaScript para construir interfaces de usuário",
+    word: "DISNEY",
+    hint: "Enigma 2",
   },
-  { word: "EU TE AMO", hint: "Uma expressão romântica em português" },
+  {
+    word: "GATO",
+    hint: "Enigma 1",
+  },
+  {
+    word: "MARIE",
+    hint: "Secreto",
+  },
 ];
 
 const App = () => {

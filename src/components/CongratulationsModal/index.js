@@ -10,16 +10,48 @@ import {
 } from "@mui/material";
 
 const CongratulationsModal = ({ open, onClose }) => {
+  const handleSurprise = () => {
+    window.location.href = "https://www.google.com/"; // replace with your surprise link
+  };
+
   return (
     <>
-      <Dialog open={open} onClose={onClose}>
-        <DialogTitle>Parabéns!</DialogTitle>
+      <Dialog
+        open={open}
+        onClose={onClose}
+        PaperProps={{
+          style: {
+            backgroundColor: "#333",
+            color: "white",
+            textAlign: "center",
+          },
+        }}
+      >
+        <DialogTitle style={{ fontSize: "2rem", fontWeight: "bold" }}>
+          Parabéns!
+        </DialogTitle>
         <DialogContent>
-          <DialogContentText>Você acertou todas as palavras!</DialogContentText>
+          <DialogContentText
+            style={{
+              color: "white",
+              marginBottom: "1.5rem",
+              fontSize: "1.2rem",
+            }}
+          >
+            Você acertou todas as palavras! Parabéns por completar o desafio.
+          </DialogContentText>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={onClose} color="primary">
-            OK
+        <DialogActions
+          style={{ justifyContent: "center", paddingBottom: "1rem" }}
+        >
+          <Button
+            onClick={handleSurprise}
+            color="secondary"
+            variant="contained"
+            size="large"
+            style={{ fontSize: "1rem" }}
+          >
+            Surpresa!
           </Button>
         </DialogActions>
       </Dialog>
