@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Box, Button, Typography, CssBaseline } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { motion, AnimatePresence } from "framer-motion";
 import Progress from "../Progress";
 import CongratulationsModal from "../CongratulationsModal";
 import LetterInput from "../LetterInput";
@@ -154,6 +155,10 @@ const Guess = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box
+        component={motion.div}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
         display="flex"
         flexDirection="column"
         alignItems="center"
@@ -191,11 +196,24 @@ const Guess = () => {
             OK
           </Button>
         </Box>
-        {message && (
-          <Typography variant="h6" mt={2}>
-            {message}
-          </Typography>
-        )}
+        <AnimatePresence>
+          {message && (
+            <Typography
+              component={motion.div}
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 50, opacity: 0 }}
+              transition={{
+                opacity: { ease: "linear" },
+                y: { ease: "linear" },
+              }}
+              variant="h6"
+              mt={2}
+            >
+              {message}
+            </Typography>
+          )}
+        </AnimatePresence>
       </Box>
       <CongratulationsModal open={open} onClose={handleClose} />
     </ThemeProvider>
