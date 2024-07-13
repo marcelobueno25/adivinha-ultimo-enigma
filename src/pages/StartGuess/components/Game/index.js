@@ -49,7 +49,7 @@ const Game = ({ handleNext }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [letters, setLetters] = useState([]);
   const [message, setMessage] = useState("");
-  const [open, setOpen] = useState(false);
+  //const [open, setOpen] = useState(false);
   const inputRefs = useRef([]);
   const messageTimeoutRef = useRef(null);
 
@@ -220,7 +220,7 @@ const Game = ({ handleNext }) => {
         </Box>
         <CongratulationsModal
           handleNext={handleNext}
-          open={open}
+          open={false}
           onClose={handleClose}
         />
       </ThemeProvider>
