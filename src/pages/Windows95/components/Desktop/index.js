@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import File from "../File";
-import ModalWindow from "../../../../components/ModalWindow";
+import CustomModal from "../../../../components/CustomModal";
 import StartGuess from "../../../StartGuess";
 import "./styles.scss";
 import Map from "../../../../pages/Map";
+import PasswordPrompt from "../../../../components/PasswordPrompt";
+import ErrorScreen from "../../../ErrorScreen";
 
 const initial = {
   name: "",
@@ -14,33 +16,55 @@ const initial = {
 const Desktop = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentLevel, setCurrentLevel] = useState(initial);
+  const [passwordPrompt, setPasswordPrompt] = useState(false);
 
   const db_pastas = [
     {
-      name: "quiz.exe",
+      nameFile: "quiz.exe",
+      nameWeb: "quiz.exe",
+      isWeb: false,
       icon: "/img/windows/Program.ico",
       component: <StartGuess />,
+      url: "",
+      password: "",
     },
     {
-      name: "Mapa",
+      nameFile: "Mapa",
+      nameWeb: "Mapa - Microsoft Internet Explorer",
+
+      isWeb: true,
       icon: "/img/windows/Earth(16 colors).ico",
       component: <Map />,
+      url: "",
+      password: "",
     },
     {
-      name: "Level 3",
+      nameFile: "Level 3",
+      nameWeb: "Level 3",
+      isWeb: true,
       icon: "/img/windows/Folder.ico",
       component: <></>,
+      url: "",
+      password: "teste",
     },
     {
-      name: "Level 4",
+      nameFile: "Level 4",
+      nameWeb: "Level 4 - Microsoft Internet Explorer",
+      isWeb: false,
       icon: "/img/windows/Folder.ico",
-      component: <></>,
+      component: <ErrorScreen />,
+      url: "",
+      password: "",
     },
   ];
 
   const handleOpenModal = (level) => {
     setCurrentLevel(level);
-    setModalOpen(true);
+    if (level.password) {
+      setPasswordPrompt(true);
+    } else {
+      setModalOpen(true);
+    }
   };
 
   const handleCloseModal = () => {
@@ -48,24 +72,44 @@ const Desktop = () => {
     setCurrentLevel(initial);
   };
 
+  const handlePasswordSubmit = (password) => {
+    if (password === currentLevel.password) {
+      // Substitua 'senha123' pela senha correta
+      setPasswordPrompt(false);
+      //setCurrentLevel(3);
+      setModalOpen(true);
+    } else {
+      alert("Senha incorreta. Tente novamente.");
+    }
+  };
+
   return (
     <div className="desktop">
       {db_pastas.map((e, index) => {
         return (
           <File
-            name={e.name}
+            name={e.nameFile}
             icon={e.icon}
             onClick={() => handleOpenModal(e)}
           />
         );
       })}
-      <ModalWindow
-        name={currentLevel.name}
+
+      <CustomModal
+        name={currentLevel.nameWeb}
         open={modalOpen}
         onClose={handleCloseModal}
+        isWeb={currentLevel.isWeb}
       >
         {currentLevel.component}
-      </ModalWindow>
+      </CustomModal>
+
+      {passwordPrompt && (
+        <PasswordPrompt
+          onSubmit={handlePasswordSubmit}
+          onCancel={() => setPasswordPrompt(false)}
+        />
+      )}
     </div>
   );
 };
