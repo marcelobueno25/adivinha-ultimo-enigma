@@ -7,7 +7,13 @@ import {
 } from "@mui/material";
 import "./styles.scss";
 
-const ModalWindow = ({ name, open, onClose, children }) => {
+const ModalWindow = ({
+  name,
+  url = "https://quizsecreto.netlify.app/",
+  open,
+  onClose,
+  children,
+}) => {
   return (
     <Dialog
       open={open}
@@ -32,7 +38,7 @@ const ModalWindow = ({ name, open, onClose, children }) => {
       </div>
       <div className="modal-address-bar">
         <span>Address:</span>
-        <input type="text" value="https://www.themesberg.com" readOnly />
+        <input type="text" value={url} readOnly />
       </div>
       <DialogContent className="modal-content">{children}</DialogContent>
       <DialogActions className="modal-actions">

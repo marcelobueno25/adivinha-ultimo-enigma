@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import File from "../File";
-import ModalWindow from "../ModalWindow";
+import ModalWindow from "../../../../components/ModalWindow";
 import StartGuess from "../../../StartGuess";
 import "./styles.scss";
 import Map from "../../../../pages/Map";
