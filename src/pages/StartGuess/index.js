@@ -27,7 +27,7 @@ const theme = createTheme({
   },
 });
 
-const Home = () => {
+const StartGuess = () => {
   const navigate = useNavigate();
 
   const handleStart = () => {
@@ -75,4 +75,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default StartGuess;

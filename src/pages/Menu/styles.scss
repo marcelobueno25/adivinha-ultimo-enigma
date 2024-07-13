@@ -1,0 +1,94 @@
+/* src/components/Menu.css */
+.glitch-text {
+  position: relative;
+  color: #00ff00;
+  animation: glitch 1s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  right: 0;
+  animation: glitch-lines 2s infinite;
+}
+
+.glitch-text::before {
+  color: #ff00ff;
+  top: 2px;
+  left: 2px;
+  z-index: -1;
+  clip: rect(24px, 550px, 90px, 0);
+}
+
+.glitch-text::after {
+  color: #00ffff;
+  top: -2px;
+  left: -2px;
+  z-index: -2;
+  clip: rect(85px, 550px, 140px, 0);
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes glitch-lines {
+  0% {
+    clip: rect(85px, 9999px, 140px, 0);
+  }
+  50% {
+    clip: rect(10px, 9999px, 85px, 0);
+  }
+  100% {
+    clip: rect(24px, 9999px, 90px, 0);
+  }
+}
+
+.glitch-button {
+  position: relative;
+  color: #0d0d0d;
+  background-color: #00ff00;
+  animation: glitch 1s infinite;
+}
+
+.glitch-button::before,
+.glitch-button::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  right: 0;
+  animation: glitch-lines 2s infinite;
+}
+
+.glitch-button::before {
+  color: #ff00ff;
+  top: 2px;
+  left: 2px;
+  z-index: -1;
+}
+
+.glitch-button::after {
+  color: #00ffff;
+  top: -2px;
+  left: -2px;
+  z-index: -2;
+}
