@@ -3,12 +3,11 @@ import {
   Dialog,
   DialogContent,
   DialogActions,
-  Button,
   IconButton,
 } from "@mui/material";
 import "./styles.scss";
 
-const ModalWindow = ({ open, onClose, children }) => {
+const ModalWindow = ({ name, open, onClose, children }) => {
   return (
     <Dialog
       open={open}
@@ -17,7 +16,7 @@ const ModalWindow = ({ open, onClose, children }) => {
       fullScreen
     >
       <div className="modal-title-bar">
-        <span className="modal-title">Nível</span>
+        <span className="modal-title">{name}</span>
         <div className="modal-controls">
           <IconButton className="modal-button" onClick={onClose}>
             <img src="/img/icons/close.png" alt="Close" />
@@ -37,7 +36,7 @@ const ModalWindow = ({ open, onClose, children }) => {
       </div>
       <DialogContent className="modal-content">{children}</DialogContent>
       <DialogActions className="modal-actions">
-        <Button onClick={onClose}>Fechar</Button>
+        {/* <Button onClick={onClose}>Fechar</Button> */}
       </DialogActions>
     </Dialog>
   );

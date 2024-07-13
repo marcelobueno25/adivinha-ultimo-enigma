@@ -3,10 +3,40 @@ import File from "../File";
 import ModalWindow from "../ModalWindow";
 import StartGuess from "../../../StartGuess";
 import "./styles.scss";
+import Map from "../../../../pages/Map";
+
+const initial = {
+  name: "",
+  icon: "",
+  component: <></>,
+};
 
 const Desktop = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [currentLevel, setCurrentLevel] = useState(null);
+  const [currentLevel, setCurrentLevel] = useState(initial);
+
+  const db_pastas = [
+    {
+      name: "quiz.exe",
+      icon: "/img/windows/Program.ico",
+      component: <StartGuess />,
+    },
+    {
+      name: "Mapa",
+      icon: "/img/windows/Earth(16 colors).ico",
+      component: <Map />,
+    },
+    {
+      name: "Level 3",
+      icon: "/img/windows/Folder.ico",
+      component: <></>,
+    },
+    {
+      name: "Level 4",
+      icon: "/img/windows/Folder.ico",
+      component: <></>,
+    },
+  ];
 
   const handleOpenModal = (level) => {
     setCurrentLevel(level);
@@ -15,35 +45,26 @@ const Desktop = () => {
 
   const handleCloseModal = () => {
     setModalOpen(false);
-    setCurrentLevel(null);
-  };
-
-  const getLevelContent = () => {
-    switch (currentLevel) {
-      case 1:
-        return <StartGuess />;
-      case 2:
-        return <StartGuess />;
-      case 3:
-        return <StartGuess />;
-      case 4:
-        return <StartGuess />;
-      case 5:
-        return <StartGuess />;
-      default:
-        return null;
-    }
+    setCurrentLevel(initial);
   };
 
   return (
     <div className="desktop">
-      <File name="Level 1" onClick={() => handleOpenModal(1)} />
-      <File name="Level 2" onClick={() => handleOpenModal(2)} />
-      <File name="Level 3" onClick={() => handleOpenModal(3)} />
-      <File name="Level 4" onClick={() => handleOpenModal(4)} />
-      <File name="Level 5" onClick={() => handleOpenModal(5)} />
-      <ModalWindow open={modalOpen} onClose={handleCloseModal}>
-        {getLevelContent()}
+      {db_pastas.map((e, index) => {
+        return (
+          <File
+            name={e.name}
+            icon={e.icon}
+            onClick={() => handleOpenModal(e)}
+          />
+        );
+      })}
+      <ModalWindow
+        name={currentLevel.name}
+        open={modalOpen}
+        onClose={handleCloseModal}
+      >
+        {currentLevel.component}
       </ModalWindow>
     </div>
   );

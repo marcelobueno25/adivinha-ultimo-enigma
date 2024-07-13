@@ -7,25 +7,37 @@ const StartMenu = () => {
       <div className="start-menu-header">Windows 95</div>
       <ul>
         <li>
-          <img src="/icons/programs.png" alt="Programs" /> Programs
+          <img
+            src="/img/windows/ProgramFolder(16x16px&32x32px).ico"
+            alt="Programs"
+          />{" "}
+          Programs
         </li>
         <li>
-          <img src="/icons/documents.png" alt="Documents" /> Documents
+          <img src="/img/windows/Folder.ico" alt="Documents" /> Documents
         </li>
         <li>
-          <img src="/icons/settings.png" alt="Settings" /> Settings
+          <img src="/img/windows/Settings.ico" alt="Settings" /> Settings
         </li>
         <li>
-          <img src="/icons/find.png" alt="Find" /> Find
+          <img
+            src="/img/windows/Searchinsheet(16x16px&24x24px).ico"
+            alt="Find"
+          />{" "}
+          Find
         </li>
         <li>
-          <img src="/icons/help.png" alt="Help" /> Help
+          <img src="/img/windows/Helpbook.ico" alt="Help" /> Help
         </li>
         <li>
-          <img src="/icons/run.png" alt="Run" /> Run...
+          <img src="/img/windows/Programwait.ico" alt="Run" /> Run...
         </li>
         <li>
-          <img src="/icons/shutdown.png" alt="Shutdown" /> Shutdown
+          <img
+            src="/img/windows/TurnOffComputer(displayonly).ico"
+            alt="Shutdown"
+          />
+          Shutdown
         </li>
       </ul>
     </div>

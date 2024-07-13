@@ -1,17 +1,10 @@
 .desktop {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   height: 100%;
   width: 100%;
   flex-grow: 1;
   padding: 10px;
   box-sizing: border-box;
-}
-
-@media (max-width: 600px) {
-  .desktop {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 }
