@@ -7,9 +7,7 @@ const Preloader = () => {
     <div className="preloader">
       <div className="preloader-content">
         <div className="windows-logo">
-          <div className="logo-parts">
-            <img src={logo} alt="Close" />
-          </div>
+          <img src={logo} alt="Close" />
         </div>
         <div className="preloader-text">
           <h1>Microsoft</h1>
