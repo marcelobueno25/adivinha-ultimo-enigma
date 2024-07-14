@@ -36,9 +36,7 @@ const CustomModal = ({
           </div>
         )}
         <div className="modal-content">{children}</div>
-        <div className="modal-actions">
-          {/* <button onClick={onClose}>Fechar</button> */}
-        </div>
+        <div className="modal-actions"></div>
       </div>
     </div>
   );

@@ -1,0 +1,16 @@
+.gameGuess {
+  height: 100%;
+
+  .guess-title {
+    font-family: "Courier New", monospace;
+    animation: glitch 1s infinite;
+  }
+  .menu-button {
+    &.primary {
+      background-color: #ff6f61;
+    }
+    &.secondary {
+      background-color: #ffc1e3;
+    }
+  }
+}

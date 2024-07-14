@@ -32,8 +32,8 @@ const LetterInput = forwardRef(
               color: pink[700],
               borderRadius: "8px",
               outline: "none",
-              width: "2ch",
-              height: "2ch",
+              width: "1.5ch",
+              height: "1.5ch",
             },
           }}
           value={value}

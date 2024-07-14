@@ -1,34 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Box, Button, Typography, CssBaseline } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Box, Button, Typography } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import Progress from "./components/Progress";
-import CongratulationsModal from "./components/CongratulationsModal";
 import LetterInput from "./components/LetterInput";
+import Modal from "../../../../components/Modal";
+import Confetti from "react-confetti";
 import "./styles.scss";
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#ff6f61", // A soft romantic red
-    },
-    secondary: {
-      main: "#ffc1e3", // A soft pink
-    },
-  },
-  typography: {
-    fontFamily: "Cursive, Arial",
-  },
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          borderRadius: "20px",
-        },
-      },
-    },
-  },
-});
 
 const wordsList = [
   {
@@ -49,7 +26,7 @@ const Game = ({ handleNext }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [letters, setLetters] = useState([]);
   const [message, setMessage] = useState("");
-  //const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const inputRefs = useRef([]);
   const messageTimeoutRef = useRef(null);
 
@@ -119,8 +96,8 @@ const Game = ({ handleNext }) => {
     if (isCorrect) {
       showMessage("Correto!");
       if (currentWordIndex + 1 === wordsList.length) {
-        //setOpen(true);
-        handleNext();
+        setOpen(true);
+        //handleNext();
       } else {
         setCurrentWordIndex((prevIndex) => (prevIndex + 1) % wordsList.length);
       }
@@ -144,7 +121,7 @@ const Game = ({ handleNext }) => {
   };
 
   const handleClose = () => {
-    //setOpen(false);
+    setOpen(false);
     setCurrentWordIndex(0);
     setMessage("");
     const word = wordsList[0].word;
@@ -154,9 +131,9 @@ const Game = ({ handleNext }) => {
   };
 
   return (
-    <div className="containerHome">
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
+    <>
+      {" "}
+      <div className="containerHome">
         <Box
           component={motion.div}
           initial={{ opacity: 0 }}
@@ -171,13 +148,14 @@ const Game = ({ handleNext }) => {
           borderRadius={10}
           bgcolor="#ffe4e1"
           color="#4b2e83"
-          p={10}
+          py={8}
+          px={3}
           sx={{ textAlign: "center" }}
         >
           <Progress currentWordIndex={currentWordIndex} wordsList={wordsList} />
-          <Box mb={5}>
+          <Box mb={2}>
             <Typography variant="h5" gutterBottom>
-              💖 {wordsList[currentWordIndex].hint} 💖
+              {wordsList[currentWordIndex].hint}
             </Typography>
           </Box>
           <Box display="flex" flexWrap="wrap" justifyContent="center" mb={2}>
@@ -195,7 +173,12 @@ const Game = ({ handleNext }) => {
             ))}
           </Box>
           <Box my={2}>
-            <Button variant="contained" color="primary" onClick={handleSubmit}>
+            <Button
+              className="menu-button primary"
+              variant="contained"
+              color="primary"
+              onClick={handleSubmit}
+            >
               OK
             </Button>
           </Box>
@@ -218,13 +201,28 @@ const Game = ({ handleNext }) => {
             )}
           </AnimatePresence>
         </Box>
-        <CongratulationsModal
-          handleNext={handleNext}
-          open={false}
-          onClose={handleClose}
-        />
-      </ThemeProvider>
-    </div>
+
+        <Modal open={open} onClose={handleClose} name={""}>
+          <Typography id="modal-title" variant="h6" component="h2">
+            Parabéns!
+          </Typography>
+          <Typography id="modal-description" sx={{ mt: 2, mb: 5 }}>
+            Você acertou todas as palavras! <br />
+            Clique no botão para Descobrir a Presente!
+          </Typography>
+          <Button
+            onClick={handleNext}
+            className="menu-button primary"
+            variant="contained"
+            color="primary"
+            size="large"
+          >
+            Surpresa!
+          </Button>
+        </Modal>
+      </div>
+      {open && <Confetti style={{ zIndex: 9999 }} numberOfPieces={100} />}
+    </>
   );
 };
 

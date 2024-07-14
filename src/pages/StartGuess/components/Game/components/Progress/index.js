@@ -1,10 +1,11 @@
 import React from "react";
 import { Box, Stepper, Step, StepLabel } from "@mui/material";
 import { motion } from "framer-motion";
+import "./styles.scss";
 
 const Progress = ({ currentWordIndex, wordsList }) => {
   return (
-    <Box width="100%" maxWidth="600px" mb={10}>
+    <Box className="stepper-container" width="100%" maxWidth="600px" mb={10}>
       <Stepper activeStep={currentWordIndex} alternativeLabel>
         {wordsList.map((wordObj, index) => (
           <Step key={index}>
@@ -13,7 +14,7 @@ const Progress = ({ currentWordIndex, wordsList }) => {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: index * 0.1 }}
             >
-              <StepLabel></StepLabel>
+              <StepLabel className="step-label" />
             </motion.div>
           </Step>
         ))}

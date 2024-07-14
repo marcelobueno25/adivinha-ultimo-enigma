@@ -22,8 +22,8 @@ const PasswordPrompt = ({ onSubmit, onCancel }) => {
         </div>
         <div className="password-content">
           <h3>
-            Digite a senha <br />
-            para acessar o Nível 3
+            bloqueado <br />
+            DIGITE A SENHA:
           </h3>
           <input
             type="password"

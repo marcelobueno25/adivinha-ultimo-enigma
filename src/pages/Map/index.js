@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import L from "leaflet";
-import { Modal, Box, Typography, IconButton } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
+import { Typography } from "@mui/material";
 import coracao from "../../assets/coracao.png";
+import Modal from "../../components/Modal";
 import "leaflet/dist/leaflet.css";
 import "./styles.scss";
 
@@ -126,35 +126,16 @@ const Map = () => {
       <Modal
         open={open}
         onClose={handleClose}
+        name={modalInfo.name}
         aria-labelledby="modal-title"
         aria-describedby="modal-description"
       >
-        <Box
-          sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: 400,
-            bgcolor: "background.paper",
-            boxShadow: 24,
-            p: 4,
-          }}
-        >
-          <IconButton
-            aria-label="close"
-            onClick={handleClose}
-            sx={{ position: "absolute", right: 8, top: 8 }}
-          >
-            <CloseIcon />
-          </IconButton>
-          <Typography id="modal-title" variant="h6" component="h2">
-            {modalInfo.name}
-          </Typography>
-          <Typography id="modal-description" sx={{ mt: 2 }}>
-            {modalInfo.info}
-          </Typography>
-        </Box>
+        <Typography id="modal-title" variant="h6" component="h2">
+          {modalInfo.name}
+        </Typography>
+        <Typography id="modal-description" sx={{ mt: 2 }}>
+          {modalInfo.info}
+        </Typography>
       </Modal>
     </div>
   );
