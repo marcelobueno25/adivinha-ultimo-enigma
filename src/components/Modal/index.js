@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.scss";
 
-const Modal = ({ name, open, onClose, children }) => {
+const Modal = ({ name, open, onClose, children, close = true }) => {
   if (!open) return null;
 
   return (
@@ -9,7 +9,13 @@ const Modal = ({ name, open, onClose, children }) => {
       <div className="modal">
         <div className="modal-title-bar">
           <span className="modal-title">{name}</span>
-          <div className="modal-controls"></div>
+          <div className="modal-controls">
+            {close && (
+              <button className="modal-button" onClick={onClose}>
+                <img src="/img/icons/close.png" alt="Close" />
+              </button>
+            )}
+          </div>
         </div>
         <div className="modal-content">{children}</div>
       </div>

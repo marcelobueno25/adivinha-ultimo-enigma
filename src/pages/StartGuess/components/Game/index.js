@@ -202,7 +202,7 @@ const Game = ({ handleNext }) => {
           </AnimatePresence>
         </Box>
 
-        <Modal open={open} onClose={handleClose} name={""}>
+        <Modal open={open} onClose={handleClose} name={""} close={false}>
           <Typography id="modal-title" variant="h6" component="h2">
             Parabéns!
           </Typography>

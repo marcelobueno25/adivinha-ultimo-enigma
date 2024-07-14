@@ -39,8 +39,8 @@ const Desktop = () => {
       password: "",
     },
     {
-      nameFile: "Level 3",
-      nameWeb: "Level 3",
+      nameFile: "Enigma",
+      nameWeb: "Enigma",
       isWeb: true,
       icon: "/img/windows/Folder.ico",
       component: <></>,
@@ -48,8 +48,8 @@ const Desktop = () => {
       password: "teste",
     },
     {
-      nameFile: "Level 4",
-      nameWeb: "Level 4 - Microsoft Internet Explorer",
+      nameFile: "Secretos",
+      nameWeb: "Secretos - Microsoft Internet Explorer",
       isWeb: false,
       icon: "/img/windows/Folder.ico",
       component: <ErrorScreen />,
