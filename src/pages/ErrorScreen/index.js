@@ -8,10 +8,12 @@ const ErrorScreen = () => {
         <div className="error-content">
           <img src="/img/msg_error.ico" alt="Error" className="error-icon" />
           <p>
-            <span> Erro ao abrir o arquivo de césar, log 13: </span>
+            <span>Erro ao abrir o arquivo, log: </span>
             <br />
-            Ibpr rfgn cebkvzn cnen qrfpboeve b frpergb, cnen frthve pbz cebkvzbf
-            cnfffbf, rffr r b pbqvtb GRFGR cnen hgvyvmne an cnfgn 3{" "}
+            hnh, ibpê znaqbh zhvgb orz zvaun qrgrgvir! ibpê pbafrthvh qrpvsene b
+            póqvtb pbzb hzn ireqnqrven rkcreg. b póqvtb frpergb é: RZBERIVIRY.
+            Hfr rffr póqvtb cnen qrfoybdhrne hzn fhecerfn rfcrpvny dhr cercnerv
+            fó cnen ibpê.
           </p>
         </div>
       </div>

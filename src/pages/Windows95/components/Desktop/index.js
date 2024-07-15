@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import File from "../File";
 import CustomModal from "../../../../components/CustomModal";
 import StartGuess from "../../../StartGuess";
-import "./styles.scss";
 import Map from "../../../../pages/Map";
 import PasswordPrompt from "../../../../components/PasswordPrompt";
 import ErrorScreen from "../../../ErrorScreen";
+import PhotoGallery from "../../../PhotoGallery";
+import "./styles.scss";
 
 const initial = {
   name: "",
@@ -23,7 +24,7 @@ const Desktop = () => {
       nameFile: "quiz.exe",
       nameWeb: "quiz.exe",
       isWeb: false,
-      icon: "/img/windows/Program.ico",
+      icon: "/img/Program.ico",
       component: <StartGuess />,
       url: "",
       password: "",
@@ -33,7 +34,7 @@ const Desktop = () => {
       nameWeb: "Mapa - Microsoft Internet Explorer",
 
       isWeb: true,
-      icon: "/img/windows/Earth(16 colors).ico",
+      icon: "/img/Earth.ico",
       component: <Map />,
       url: "",
       password: "",
@@ -42,16 +43,16 @@ const Desktop = () => {
       nameFile: "Enigma",
       nameWeb: "Enigma",
       isWeb: true,
-      icon: "/img/windows/Folder.ico",
-      component: <></>,
+      icon: "/img/Folder.ico",
+      component: <PhotoGallery />,
       url: "",
-      password: "teste",
+      password: "EMOREVIVEL",
     },
     {
       nameFile: "Secretos",
       nameWeb: "Secretos - Microsoft Internet Explorer",
       isWeb: false,
-      icon: "/img/windows/Folder.ico",
+      icon: "/img/Folder.ico",
       component: <ErrorScreen />,
       url: "",
       password: "",

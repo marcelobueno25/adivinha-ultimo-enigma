@@ -20,11 +20,12 @@ const Reveal = () => {
       sx={{ textAlign: "center" }}
     >
       <Typography variant="h4" mb={2}>
-        Surpresa!
+        Você Desbloqueou o Código Secreto!
       </Typography>
       <Typography variant="h5" mb={5}>
-        Num espaço onde sabores se misturam e memórias são criadas, Busca onde o
-        aroma dos sonhos é transformado em realidade encantada.
+        Parabéns por acertar todas as perguntas! Aqui está o código secreto que
+        você desbloqueou: [Cifra de César - 13]. Use-o para decodificar outros
+        secretos! 😉
       </Typography>
     </Box>
   );

@@ -10,7 +10,15 @@
 }
 
 .MuiStepIcon-root {
-  color: #ff6f61 !important;
+  color: #92a8d1 !important;
+
+  &.Mui-active {
+    color: #ff6f61 !important;
+  }
+
+  &.Mui-completed {
+    color: #c2e59c !important;
+  }
 }
 
 .MuiStepIcon-text {

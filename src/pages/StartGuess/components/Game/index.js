@@ -1,26 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
+import Confetti from "react-confetti";
 import Progress from "./components/Progress";
 import LetterInput from "./components/LetterInput";
 import Modal from "../../../../components/Modal";
-import Confetti from "react-confetti";
+import { GUESS_LIST } from "../../../../util/db";
 import "./styles.scss";
-
-const wordsList = [
-  {
-    word: "GATA",
-    hint: "Enigma 1",
-  },
-  {
-    word: "DISNEY",
-    hint: "Enigma 2",
-  },
-  {
-    word: "MARIE",
-    hint: "Com base nesses Enigmas qual o Filme?",
-  },
-];
 
 const Game = ({ handleNext }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -39,7 +25,7 @@ const Game = ({ handleNext }) => {
   }, []);
 
   useEffect(() => {
-    const word = wordsList[currentWordIndex].word;
+    const word = GUESS_LIST[currentWordIndex].word;
     const lettersArray = Array(word.length).fill("");
     setLetters(lettersArray);
     inputRefs.current = inputRefs.current.slice(0, lettersArray.length);
@@ -54,7 +40,7 @@ const Game = ({ handleNext }) => {
     setLetters(newLetters);
 
     if (value && index < inputRefs.current.length - 1) {
-      if (wordsList[currentWordIndex].word[index + 1] === " ") {
+      if (GUESS_LIST[currentWordIndex].word[index + 1] === " ") {
         inputRefs.current[index + 2]?.focus();
         inputRefs.current[index + 2]?.select();
       } else {
@@ -66,7 +52,7 @@ const Game = ({ handleNext }) => {
 
   const handleKeyUp = (e, index) => {
     if (e.key === "Backspace" && index > 0) {
-      if (wordsList[currentWordIndex].word[index - 1] === " ") {
+      if (GUESS_LIST[currentWordIndex].word[index - 1] === " ") {
         inputRefs.current[index - 2]?.focus();
         inputRefs.current[index - 2]?.select();
       } else {
@@ -89,21 +75,21 @@ const Game = ({ handleNext }) => {
       return;
     }
 
-    const currentWord = wordsList[currentWordIndex].word.split("");
+    const currentWord = GUESS_LIST[currentWordIndex].word.split("");
     const isCorrect = currentWord.every(
       (letter, index) => letter === " " || letter === letters[index]
     );
     if (isCorrect) {
       showMessage("Correto!");
-      if (currentWordIndex + 1 === wordsList.length) {
+      if (currentWordIndex + 1 === GUESS_LIST.length) {
         setOpen(true);
         //handleNext();
       } else {
-        setCurrentWordIndex((prevIndex) => (prevIndex + 1) % wordsList.length);
+        setCurrentWordIndex((prevIndex) => (prevIndex + 1) % GUESS_LIST.length);
       }
     } else {
       showMessage("Incorreto. Tente novamente.");
-      const word = wordsList[currentWordIndex].word;
+      const word = GUESS_LIST[currentWordIndex].word;
       const lettersArray = Array(word.length).fill("");
       setLetters(lettersArray);
       inputRefs.current[0]?.focus();
@@ -124,7 +110,7 @@ const Game = ({ handleNext }) => {
     setOpen(false);
     setCurrentWordIndex(0);
     setMessage("");
-    const word = wordsList[0].word;
+    const word = GUESS_LIST[0].word;
     const lettersArray = Array(word.length).fill("");
     setLetters(lettersArray);
     inputRefs.current[0]?.focus();
@@ -132,7 +118,6 @@ const Game = ({ handleNext }) => {
 
   return (
     <>
-      {" "}
       <div className="containerHome">
         <Box
           component={motion.div}
@@ -152,25 +137,30 @@ const Game = ({ handleNext }) => {
           px={3}
           sx={{ textAlign: "center" }}
         >
-          <Progress currentWordIndex={currentWordIndex} wordsList={wordsList} />
+          <Progress
+            currentWordIndex={currentWordIndex}
+            wordsList={GUESS_LIST}
+          />
           <Box mb={2}>
             <Typography variant="h5" gutterBottom>
-              {wordsList[currentWordIndex].hint}
+              {GUESS_LIST[currentWordIndex].hint}
             </Typography>
           </Box>
           <Box display="flex" flexWrap="wrap" justifyContent="center" mb={2}>
-            {wordsList[currentWordIndex].word.split("").map((letter, index) => (
-              <LetterInput
-                key={`${currentWordIndex}-${index}`}
-                index={index}
-                value={letter === " " ? " " : letters[index]}
-                onChange={handleChange}
-                onKeyUp={handleKeyUp}
-                onKeyPress={handleKeyPress}
-                ref={(el) => (inputRefs.current[index] = el)}
-                disabled={letter === " "}
-              />
-            ))}
+            {GUESS_LIST[currentWordIndex].word
+              .split("")
+              .map((letter, index) => (
+                <LetterInput
+                  key={`${currentWordIndex}-${index}`}
+                  index={index}
+                  value={letter === " " ? " " : letters[index]}
+                  onChange={handleChange}
+                  onKeyUp={handleKeyUp}
+                  onKeyPress={handleKeyPress}
+                  ref={(el) => (inputRefs.current[index] = el)}
+                  disabled={letter === " "}
+                />
+              ))}
           </Box>
           <Box my={2}>
             <Button
@@ -204,11 +194,12 @@ const Game = ({ handleNext }) => {
 
         <Modal open={open} onClose={handleClose} name={""} close={false}>
           <Typography id="modal-title" variant="h6" component="h2">
-            Parabéns!
+            Parabéns Meu Amor <br />
+            Você Arrasou!!
           </Typography>
-          <Typography id="modal-description" sx={{ mt: 2, mb: 5 }}>
-            Você acertou todas as palavras! <br />
-            Clique no botão para Descobrir a Presente!
+          <Typography id="modal-description" sx={{ mt: 2, mb: 3 }}>
+            Você realmente me conhece muito bem! 🥳 <br /> Clique no botão
+            abaixo para desbloquear o codigo secreto!
           </Typography>
           <Button
             onClick={handleNext}
@@ -217,7 +208,7 @@ const Game = ({ handleNext }) => {
             color="primary"
             size="large"
           >
-            Surpresa!
+            acessar
           </Button>
         </Modal>
       </div>

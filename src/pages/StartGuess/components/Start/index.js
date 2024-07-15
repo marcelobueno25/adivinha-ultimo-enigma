@@ -30,12 +30,12 @@ const Start = ({ handleNext }) => {
         gutterBottom
         maxWidth="600px"
       >
-        Bem-vindo
-        <br /> ao jogo Amor!
+        Quiz do Crush
       </Typography>
       <Typography className="guess-title" variant="h5" mb={5} maxWidth="600px">
-        Tem uma surpresinha simples te esperando. Não é um castelo rs mas é de
-        coração! <br /> Adivinhe as palavras e descubra o presente!
+        É hora de testar seus conhecimentos! Responda às perguntas e descubra se
+        você sabe tudo sobre o seu namorado. <br />
+        Boa sorte! 😉
       </Typography>
       <Button
         className="menu-button primary"
