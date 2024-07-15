@@ -4,7 +4,7 @@ import Chat from "./components/Chat";
 import "./styles.scss";
 
 const MSN = () => {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleLogin = (email, password) => {
