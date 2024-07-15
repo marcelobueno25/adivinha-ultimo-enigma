@@ -70,7 +70,7 @@ const Desktop = () => {
     },
     {
       nameFile: "MSN",
-      nameWindows: "",
+      nameWindows: "msn messenger",
       isWeb: false,
       icon: "/img/msn.png",
       component: <MSN />,
