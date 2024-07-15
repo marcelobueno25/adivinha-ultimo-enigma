@@ -13,7 +13,7 @@ const StartMenu = () => {
           <img src="/img/Folder.ico" alt="Documents" /> Documents
         </li>
         <li>
-          <img src="/img/windows/Settings.ico" alt="Settings" /> Settings
+          <img src="/img/Settings.ico" alt="Settings" /> Settings
         </li>
         <li>
           <img src="/img/Search.ico" alt="Find" /> Find

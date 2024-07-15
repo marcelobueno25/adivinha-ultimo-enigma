@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import File from "../File";
-import CustomModal from "../../../../components/CustomModal";
-import StartGuess from "../../../StartGuess";
-import Map from "../../../../pages/Map";
-import PasswordPrompt from "../../../../components/PasswordPrompt";
-import ErrorScreen from "../../../ErrorScreen";
-import PhotoGallery from "../../../PhotoGallery";
+import CustomModal from "../../../components/CustomModal";
+import StartGuess from "../../StartGuess";
+import Map from "../../../pages/Map";
+import PasswordPrompt from "../../../components/PasswordPrompt";
+import ErrorScreen from "../../ErrorScreen";
+import PhotoGallery from "../../PhotoGallery";
+import Help from "../../Help";
+import MSN from "../../MSN";
 import "./styles.scss";
 
 const initial = {
@@ -21,27 +23,36 @@ const Desktop = () => {
 
   const db_pastas = [
     {
-      nameFile: "quiz.exe",
-      nameWeb: "quiz.exe",
+      nameFile: "Lixeira",
+      nameWindows: "Lixeira",
       isWeb: false,
-      icon: "/img/Program.ico",
+      icon: "/img/lixeira2.png",
+      component: <></>,
+      url: "",
+      password: "",
+    },
+    {
+      nameFile: "quiz.exe",
+      nameWindows: "quiz.exe",
+      isWeb: false,
+      icon: "/img/Joy.ico",
       component: <StartGuess />,
       url: "",
       password: "",
     },
     {
       nameFile: "Mapa",
-      nameWeb: "Mapa - Microsoft Internet Explorer",
+      nameWindows: "Mapa - Microsoft Internet Explorer",
 
       isWeb: true,
-      icon: "/img/Earth.ico",
+      icon: "/img/Earth2.ico",
       component: <Map />,
       url: "",
       password: "",
     },
     {
       nameFile: "Enigma",
-      nameWeb: "Enigma",
+      nameWindows: "Enigma",
       isWeb: true,
       icon: "/img/Folder.ico",
       component: <PhotoGallery />,
@@ -49,11 +60,29 @@ const Desktop = () => {
       password: "EMOREVIVEL",
     },
     {
-      nameFile: "Secretos",
-      nameWeb: "Secretos - Microsoft Internet Explorer",
+      nameFile: "codigo.bat",
+      nameWindows: "codigo.bat",
       isWeb: false,
-      icon: "/img/Folder.ico",
+      icon: "/img/Program.ico",
       component: <ErrorScreen />,
+      url: "",
+      password: "",
+    },
+    {
+      nameFile: "MSN",
+      nameWindows: "",
+      isWeb: false,
+      icon: "/img/msn.png",
+      component: <MSN />,
+      url: "",
+      password: "",
+    },
+    {
+      nameFile: "Ajuda",
+      nameWindows: "Ajuda",
+      isWeb: false,
+      icon: "/img/Helpbook.ico",
+      component: <Help />,
       url: "",
       password: "",
     },
@@ -75,7 +104,6 @@ const Desktop = () => {
 
   const handlePasswordSubmit = (password) => {
     if (password === currentLevel.password) {
-      // Substitua 'senha123' pela senha correta
       setPasswordPrompt(false);
       //setCurrentLevel(3);
       setModalOpen(true);
@@ -97,7 +125,7 @@ const Desktop = () => {
       })}
 
       <CustomModal
-        name={currentLevel.nameWeb}
+        name={currentLevel.nameWindows}
         open={modalOpen}
         onClose={handleCloseModal}
         isWeb={currentLevel.isWeb}
