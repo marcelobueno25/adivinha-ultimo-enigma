@@ -12,7 +12,7 @@ const Preloader = () => {
         <div className="preloader-text">
           <h1>Microsoft</h1>
           <h2>
-            Windows <span>95</span>
+            WinLove <span>95</span>
           </h2>
         </div>
       </div>

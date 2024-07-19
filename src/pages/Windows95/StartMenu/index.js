@@ -4,7 +4,7 @@ import "./styles.scss";
 const StartMenu = () => {
   return (
     <div className="start-menu">
-      <div className="start-menu-header">Windows 95</div>
+      <div className="start-menu-header">WinLove 95</div>
       <ul>
         <li>
           <img src="/img/ProgramFolder.ico" alt="Programs" /> Programs
