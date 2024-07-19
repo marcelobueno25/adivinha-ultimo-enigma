@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Desktop from "./pages/Windows95/Desktop";
 import StartMenu from "./pages/Windows95/StartMenu";
 import Preloader from "./components/Preloader";
+import { GlobalProvider } from "./Context/GlobalContext";
 import "./styles/global.scss";
 
 const App = () => {
@@ -23,21 +24,25 @@ const App = () => {
   return loading ? (
     <Preloader />
   ) : (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Desktop />} />
-        </Routes>
-        <div className="taskbar">
-          <div className="start-button" onClick={toggleStartMenu}>
-            <img src="img/windows.png" alt="Iniciar" />
-            <span>Iniciar</span>
+    <GlobalProvider>
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Desktop />} />
+          </Routes>
+          <div className="taskbar">
+            <div className="start-button" onClick={toggleStartMenu}>
+              <img src="img/windows.png" alt="Iniciar" />
+              <span>Iniciar</span>
+            </div>
+            <div className="taskbar-time">
+              {new Date().toLocaleTimeString()}
+            </div>
+            {startMenuOpen && <StartMenu />}
           </div>
-          <div className="taskbar-time">{new Date().toLocaleTimeString()}</div>
-          {startMenuOpen && <StartMenu />}
         </div>
-      </div>
-    </Router>
+      </Router>
+    </GlobalProvider>
   );
 };
 

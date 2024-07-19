@@ -3,4 +3,11 @@
   background-color: #fff;
   height: 100%;
   padding: 10px;
+
+  .photoGalleryPhoto {
+    max-width: 400px;
+    max-height: 400px;
+    height: 100%;
+    width: 100%;
+  }
 }

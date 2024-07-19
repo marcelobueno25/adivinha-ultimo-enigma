@@ -35,18 +35,6 @@ const PasswordPrompt = ({ onSubmit, onCancel }) => {
         <div className="password-actions"></div>
       </div>
     </div>
-    // <div className="password-prompt">
-    //   <div className="password-prompt-content">
-    //     <h3>Digite a senha para acessar o Nível 3</h3>
-    //     <input
-    //       type="password"
-    //       value={password}
-    //       onChange={(e) => setPassword(e.target.value)}
-    //     />
-    //     <button onClick={handleSubmit}>Enviar</button>
-    //     <button onClick={onCancel}>Cancelar</button>
-    //   </div>
-    // </div>
   );
 };
 

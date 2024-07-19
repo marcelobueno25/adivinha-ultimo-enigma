@@ -9,6 +9,7 @@ import PhotoGallery from "../../PhotoGallery";
 import Help from "../../Help";
 import MSN from "../../MSN";
 import "./styles.scss";
+import Inbox from "../../Inbox";
 
 const initial = {
   name: "",
@@ -22,15 +23,6 @@ const Desktop = () => {
   const [passwordPrompt, setPasswordPrompt] = useState(false);
 
   const db_pastas = [
-    {
-      nameFile: "Lixeira",
-      nameWindows: "Lixeira",
-      isWeb: false,
-      icon: "/img/lixeira2.png",
-      component: <></>,
-      url: "",
-      password: "",
-    },
     {
       nameFile: "quiz.exe",
       nameWindows: "quiz.exe",
@@ -51,9 +43,9 @@ const Desktop = () => {
       password: "",
     },
     {
-      nameFile: "Enigma",
-      nameWindows: "Enigma",
-      isWeb: true,
+      nameFile: "Galeria",
+      nameWindows: "Galeria",
+      isWeb: false,
       icon: "/img/Folder.ico",
       component: <PhotoGallery />,
       url: "",
@@ -65,6 +57,15 @@ const Desktop = () => {
       isWeb: false,
       icon: "/img/Program.ico",
       component: <ErrorScreen />,
+      url: "",
+      password: "",
+    },
+    {
+      nameFile: "Inbox",
+      nameWindows: "Inbox",
+      isWeb: false,
+      icon: "/img/inbox.png",
+      component: <Inbox />,
       url: "",
       password: "",
     },

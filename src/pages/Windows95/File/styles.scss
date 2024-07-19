@@ -20,24 +20,11 @@
   height: 50px;
 }
 
-.file-name {
-  color: #fff;
-  font-size: 14px;
-  text-align: center;
-}
-
 @media (max-width: 600px) {
   .file {
-    //max-width: 70px;
-    //max-height: 70px;
     padding: 5px;
     margin: 5px;
   }
-
-  // .file-icon {
-  //   width: 40px;
-  //   height: 40px;
-  // }
 
   .file-name {
     font-size: 12px;

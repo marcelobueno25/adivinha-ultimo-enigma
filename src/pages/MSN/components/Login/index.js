@@ -30,6 +30,7 @@ const Login = ({ onLogin, errorMessage }) => {
                 type="text"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                placeholder="digite o e-mail"
                 required
               />
             </div>
@@ -39,6 +40,7 @@ const Login = ({ onLogin, errorMessage }) => {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                placeholder="digite a senha"
                 required
               />
             </div>
