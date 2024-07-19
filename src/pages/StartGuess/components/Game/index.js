@@ -6,9 +6,11 @@ import Progress from "./components/Progress";
 import LetterInput from "./components/LetterInput";
 import Modal from "../../../../components/Modal";
 import { GUESS_LIST } from "../../../../util/db";
+import { useGlobalContext } from "../../../../Context/GlobalContext";
 import "./styles.scss";
 
 const Game = ({ handleNext }) => {
+  const { globalVariable, setGlobalVariable } = useGlobalContext();
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [letters, setLetters] = useState([]);
   const [message, setMessage] = useState("");
@@ -202,7 +204,10 @@ const Game = ({ handleNext }) => {
             abaixo para desbloquear o codigo secreto!
           </Typography>
           <Button
-            onClick={handleNext}
+            onClick={() => {
+              handleNext();
+              setGlobalVariable({ ...globalVariable, msn: true });
+            }}
             className="menu-button primary"
             variant="contained"
             color="primary"

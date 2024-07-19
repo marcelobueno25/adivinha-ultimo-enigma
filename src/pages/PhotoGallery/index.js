@@ -27,7 +27,7 @@ const PhotoGallery = () => {
     {
       nameFile: "photo-marcelo3.png",
       icon: "/img/ArquivoPainting.ico",
-      photo: "/img/fotos/ma3.png",
+      photo: "/img/fotos/ma4.png",
     },
     {
       nameFile: "photo-sabrina.png",
@@ -37,12 +37,12 @@ const PhotoGallery = () => {
     {
       nameFile: "photo-sabrina2.png",
       icon: "/img/ArquivoPainting.ico",
-      photo: "/img/fotos/sa2.png",
+      photo: "/img/fotos/sa3.png",
     },
     {
       nameFile: "photo-sabrina3.png",
       icon: "/img/ArquivoPainting.ico",
-      photo: "/img/fotos/sa3.png",
+      photo: "/img/fotos/sa4.png",
     },
   ];
 

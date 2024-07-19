@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useGlobalContext } from "../../../Context/GlobalContext";
 import File from "../File";
 import CustomModal from "../../../components/CustomModal";
 import StartGuess from "../../StartGuess";
@@ -8,8 +9,8 @@ import ErrorScreen from "../../ErrorScreen";
 import PhotoGallery from "../../PhotoGallery";
 import Help from "../../Help";
 import MSN from "../../MSN";
-import "./styles.scss";
 import Inbox from "../../Inbox";
+import "./styles.scss";
 
 const initial = {
   name: "",
@@ -18,6 +19,7 @@ const initial = {
 };
 
 const Desktop = () => {
+  const { globalVariable, setGlobalVariable } = useGlobalContext();
   const [modalOpen, setModalOpen] = useState(false);
   const [currentLevel, setCurrentLevel] = useState(initial);
   const [passwordPrompt, setPasswordPrompt] = useState(false);
@@ -92,7 +94,8 @@ const Desktop = () => {
   const handleOpenModal = (level) => {
     setCurrentLevel(level);
     if (level.password) {
-      setPasswordPrompt(true);
+      if (globalVariable.gallery) setModalOpen(true);
+      else setPasswordPrompt(true);
     } else {
       setModalOpen(true);
     }
@@ -106,8 +109,8 @@ const Desktop = () => {
   const handlePasswordSubmit = (password) => {
     if (password === currentLevel.password) {
       setPasswordPrompt(false);
-      //setCurrentLevel(3);
       setModalOpen(true);
+      setGlobalVariable({ ...globalVariable, gallery: true });
     } else {
       alert("Senha incorreta. Tente novamente.");
     }

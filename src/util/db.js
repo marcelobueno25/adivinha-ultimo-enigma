@@ -67,11 +67,17 @@ export const LOCATIONS_LIST = [
   },
 ];
 
-export const GUESS_LIST = [
+export const LOCATIONS_LIST_NEW = [
+  ...LOCATIONS_LIST,
   {
-    hint: "Qual é a minha cor favorita?",
-    word: "PRETO",
+    name: "Unisa Santo Amaro",
+    info: "",
+    img: "",
+    position: [-23.653291304229484, -46.711689843988154],
   },
+];
+
+export const GUESS_LIST = [
   {
     hint: "Qual é o meu signo do zodíaco?",
     word: "ARIES",
@@ -93,10 +99,6 @@ export const GUESS_LIST = [
     word: "INVERNO",
   },
   {
-    hint: "Qual nossa comida favorita?",
-    word: "POKE",
-  },
-  {
     hint: "Qual foi a primeira coisa que notei em você quando te vi?",
     word: "SORRISO",
   },
@@ -111,7 +113,8 @@ export const GUESS_LIST = [
 ];
 
 export const LOGIN_MSN = {
-  email_sabrina: "sah_carinho@hotmail.com.br",
+  email_sabrina: "sah_gatinha02@hotmail.com.br",
   email_marcelo: "marcelao_oakley_trevoso@hotmail.com.br",
+  name_msn: "™ мααн ∂αяк ™",
   password: "disney",
 };

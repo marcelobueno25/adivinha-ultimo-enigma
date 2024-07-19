@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Grid from "@mui/material/Grid";
+import { LOGIN_MSN } from "../../../../util/db";
 import "./styles.scss";
 
 const Chat = () => {
@@ -8,37 +9,37 @@ const Chat = () => {
   const MSG = [
     {
       user: "♥ 𝒮𝒶𝓈𝒶 𝑔𝒶𝓉𝒾𝓃𝒽𝒶 (っ◔◡◔)っ",
-      msg: "Oi my Crush",
+      msg: "Oi, my Crush! 🌟",
       enviado: 0,
     },
     {
       user: "♥ 𝒮𝒶𝓈𝒶 𝑔𝒶𝓉𝒾𝓃𝒽𝒶 (っ◔◡◔)っ",
-      msg: "Me desculpe o sumico, essa semana foi tanto conturbada",
+      msg: "Desculpa o sumiço, essa semana foi uma loucura total! 😵",
       enviado: 0,
     },
     {
       user: "™ мααн ∂αяк ™",
-      msg: "Oii Sasa",
+      msg: "Oie, Sasa! ",
       enviado: 1,
     },
     {
       user: "™ мααн ∂αяк ™",
-      msg: "Ja tava botando fe que vc iria me deixar no vacuo kkk",
+      msg: "Tava achando que você ia me deixar falando sozinho, hein!? 😂",
       enviado: 1,
     },
     {
       user: "™ мααн ∂αяк ™",
-      msg: "Mas ja que chegou ate aqui, tenho uma surpresa pra vc",
+      msg: "Mas já que apareceu, prepare-se... tenho um secreto para vc!",
       enviado: 1,
     },
     {
       user: "♥ 𝒮𝒶𝓈𝒶 𝑔𝒶𝓉𝒾𝓃𝒽𝒶 (っ◔◡◔)っ",
-      msg: "Fala homennnnn",
+      msg: "Ai, fala logo, homem! Tô curiosa aqui! 😆",
       enviado: 0,
     },
     {
       user: "™ мααн ∂αяк ™",
-      msg: "So vou dizer uma coisa, [ Jubileu Jubileia ]",
+      msg: "Só vou te dar uma pista... [-23.653291304229484, -46.711689843988154]",
       enviado: 1,
     },
   ];
@@ -54,10 +55,10 @@ const Chat = () => {
               className="contact-avatar"
             />
             <div>
-              <h5>Biscoito Gostoso</h5>
+              <h5>{LOGIN_MSN.name_msn}</h5>
               <p>
-                Minha Gata Linda {"  "}
-                <small>&lt;biscotinhogostoso@msn.com.br&gt;</small>
+                Nas sombras, encontrei meu lugar {"  "}
+                <small>&lt;{LOGIN_MSN.email_marcelo}&gt;</small>
               </p>
             </div>
           </div>
@@ -105,7 +106,7 @@ const Chat = () => {
           <div className="topavatar">
             <img
               className="chatAvatarImg"
-              src="/img/msn/userDefault.png"
+              src="/img/fotos/ma3.png"
               alt="user default"
             />
             <img
@@ -117,7 +118,7 @@ const Chat = () => {
           <div className="bottomavatar">
             <img
               className="chatAvatarImg"
-              src="/img/msn/userDefault.png"
+              src="/img/fotos/sa2.png"
               alt="user default"
             />
             <img
