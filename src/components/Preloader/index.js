@@ -10,9 +10,9 @@ const Preloader = () => {
           <img src={logo} alt="Close" />
         </div>
         <div className="preloader-text">
-          <h1>Microsoft</h1>
+          <h1>MemoirSoft</h1>
           <h2>
-            WinLove <span>95</span>
+            Winlove <span>95</span>
           </h2>
         </div>
       </div>

@@ -34,7 +34,7 @@ const Desktop = () => {
     },
     {
       nameFile: "Mapa",
-      nameWindows: "Mapa - Microsoft Internet Explorer",
+      nameWindows: "Mapa - MemoirSoft Internet Explorer",
 
       isWeb: true,
       icon: "/img/Earth2.ico",

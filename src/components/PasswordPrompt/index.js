@@ -16,7 +16,7 @@ const PasswordPrompt = ({ onSubmit, onCancel }) => {
           <span className="password-title"></span>
           <div className="password-controls">
             <button className="password-button" onClick={onCancel}>
-              <img src="/img/icons/close.png" alt="Close" />
+              <img src="/img/close.png" alt="Close" />
             </button>
           </div>
         </div>

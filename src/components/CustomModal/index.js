@@ -18,20 +18,20 @@ const CustomModal = ({
           <span className="modal-title">{name}</span>
           <div className="modal-controls">
             <button className="modal-button" onClick={onClose}>
-              <img src="/img/icons/close.png" alt="Close" />
+              <img src="/img/close.png" alt="Close" />
             </button>
           </div>
         </div>
         <div className="modal-toolbar">
-          <button>File</button>
-          <button>Edit</button>
-          <button>View</button>
-          <button>Favorites</button>
-          <button>Help</button>
+          <button>Arquivo</button>
+          <button>Editar</button>
+          <button>Visualizar</button>
+          <button>Favoritos</button>
+          <button>Ajuda</button>
         </div>
         {isWeb && (
           <div className="modal-address-bar">
-            <span>Address:</span>
+            <span>Endereço:</span>
             <input type="text" value={url} readOnly />
           </div>
         )}

@@ -109,3 +109,9 @@ export const GUESS_LIST = [
     word: "WONKA",
   },
 ];
+
+export const LOGIN_MSN = {
+  email_sabrina: "sah_carinho@hotmail.com.br",
+  email_marcelo: "marcelao_oakley_trevoso@hotmail.com.br",
+  password: "disney",
+};

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Login from "./components/Login";
 import Chat from "./components/Chat";
+import { LOGIN_MSN } from "../../util/db";
 import "./styles.scss";
 
 const MSN = () => {
@@ -8,15 +9,18 @@ const MSN = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleLogin = (email, password) => {
-    if (email === "biscotinhogostoso@msn.com.br" && password === "solove") {
+    if (email === LOGIN_MSN.email_sabrina && password === LOGIN_MSN.password) {
       setLoggedIn(true);
       setErrorMessage("");
     } else {
-      if (email !== "biscotinhogostoso@msn.com.br" && password !== "solove") {
+      if (
+        email !== LOGIN_MSN.email_sabrina &&
+        password !== LOGIN_MSN.password
+      ) {
         setErrorMessage("Email e senha incorretos.");
-      } else if (email !== "biscotinhogostoso@msn.com.br") {
+      } else if (email !== LOGIN_MSN.email_sabrina) {
         setErrorMessage("Email incorreto.");
-      } else if (password !== "solove") {
+      } else if (password !== LOGIN_MSN.password) {
         setErrorMessage("Senha incorreta.");
       }
     }

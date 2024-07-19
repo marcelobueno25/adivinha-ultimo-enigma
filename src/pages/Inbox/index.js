@@ -12,6 +12,7 @@ import inboxMgs from "../../assets/inboxMgs.PNG";
 import inboxMenu from "../../assets/inboxMenu.PNG";
 import IconMSG from "../../assets/msg.ico";
 import "./styles.scss";
+import { LOGIN_MSN } from "../../util/db";
 
 const Inbox = () => {
   const [open, setOpen] = useState(false);
@@ -26,8 +27,8 @@ const Inbox = () => {
           <TableHead>
             <TableRow>
               <TableCell></TableCell>
-              <TableCell>From</TableCell>
-              <TableCell>Subject</TableCell>
+              <TableCell>De</TableCell>
+              <TableCell>Assunto</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -54,16 +55,13 @@ const Inbox = () => {
         <button onClick={handleClose}>voltar</button>
         <div className="contentMgsHeader">
           <p>
-            <strong>From:</strong> Marcelo Bueno
+            <strong>De:</strong> Marcelo Bueno ({LOGIN_MSN.email_marcelo})
           </p>
           <p>
-            <strong>To:</strong> Sabrina Kerpen
+            <strong>Para:</strong> Sabrina Kerpen ({LOGIN_MSN.email_sabrina})
           </p>
           <p>
-            <strong>CC:</strong>
-          </p>
-          <p>
-            <strong>Subject:</strong> Bem vindo
+            <strong>Assunto:</strong> Bem vindo
           </p>
         </div>
         <div className="contentMgsBody">

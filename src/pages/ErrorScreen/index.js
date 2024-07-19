@@ -5,8 +5,8 @@ const ErrorScreen = () => {
   return (
     <div className="error-screen">
       <div className="error-content">
-        <h4>Microsoft Windows 95 - Copyrigt Microsoft Corp 1981-1996.</h4>
-        <h4>C:\WINDOWS{">"} npm run start</h4>
+        <h4>Microsoft Winlove 95 - Copyrigt MemoirSoft Corp.</h4>
+        <h4>C:\WINLOVE{">"} npm run start</h4>
         <h4>
           Error: when opening file, log:{" "}
           <span>
