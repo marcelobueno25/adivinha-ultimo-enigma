@@ -10,6 +10,13 @@ import PhotoGallery from "../../PhotoGallery";
 import Help from "../../Help";
 import MSN from "../../MSN";
 import Inbox from "../../Inbox";
+import joyicon from "../../../assets/icons/Joy.ico";
+import earthicon from "../../../assets/icons/Earth.ico";
+import foldericon from "../../../assets/icons/Folder.ico";
+import programicon from "../../../assets/icons/Program.ico";
+import inboxicon from "../../../assets/icons/inbox.png";
+import msnicon from "../../../assets/icons/msn.png";
+import helpbookicon from "../../../assets/icons/Helpbook.ico";
 import "./styles.scss";
 
 const initial = {
@@ -29,7 +36,7 @@ const Desktop = () => {
       nameFile: "quiz.exe",
       nameWindows: "quiz.exe",
       isWeb: false,
-      icon: "/img/Joy.ico",
+      icon: joyicon,
       component: <StartGuess />,
       url: "",
       password: "",
@@ -39,7 +46,7 @@ const Desktop = () => {
       nameWindows: "Mapa - MemoirSoft Internet Explorer",
 
       isWeb: true,
-      icon: "/img/Earth2.ico",
+      icon: earthicon,
       component: <Map />,
       url: "",
       password: "",
@@ -48,7 +55,7 @@ const Desktop = () => {
       nameFile: "Galeria",
       nameWindows: "Galeria",
       isWeb: false,
-      icon: "/img/Folder.ico",
+      icon: foldericon,
       component: <PhotoGallery />,
       url: "",
       password: "EMOREVIVEL",
@@ -57,7 +64,7 @@ const Desktop = () => {
       nameFile: "codigo.bat",
       nameWindows: "codigo.bat",
       isWeb: false,
-      icon: "/img/Program.ico",
+      icon: programicon,
       component: <ErrorScreen />,
       url: "",
       password: "",
@@ -66,7 +73,7 @@ const Desktop = () => {
       nameFile: "Inbox",
       nameWindows: "Inbox",
       isWeb: false,
-      icon: "/img/inbox.png",
+      icon: inboxicon,
       component: <Inbox />,
       url: "",
       password: "",
@@ -75,7 +82,7 @@ const Desktop = () => {
       nameFile: "MSN",
       nameWindows: "msn messenger",
       isWeb: false,
-      icon: "/img/msn.png",
+      icon: msnicon,
       component: <MSN />,
       url: "",
       password: "",
@@ -84,7 +91,7 @@ const Desktop = () => {
       nameFile: "Ajuda",
       nameWindows: "Ajuda",
       isWeb: false,
-      icon: "/img/Helpbook.ico",
+      icon: helpbookicon,
       component: <Help />,
       url: "",
       password: "",

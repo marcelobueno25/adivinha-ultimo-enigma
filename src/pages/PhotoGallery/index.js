@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import File from "../Windows95/File";
-import "./styles.scss";
 import Modal from "../../components/Modal";
+import arquivoPaintingicon from "../../assets/icons/ArquivoPainting.ico";
+import ma1 from "../../assets/photos/ma1.png";
+import ma2 from "../../assets/photos/ma2.png";
+import ma4 from "../../assets/photos/ma4.png";
+import sa1 from "../../assets/photos/sa1.png";
+import sa3 from "../../assets/photos/sa3.png";
+import sa4 from "../../assets/photos/sa4.png";
+import "./styles.scss";
 
 const initial = {
   name: "",
@@ -16,33 +23,33 @@ const PhotoGallery = () => {
   const db_pastas = [
     {
       nameFile: "photo-marcelo.png",
-      icon: "/img/ArquivoPainting.ico",
-      photo: "/img/fotos/ma1.png",
+      icon: arquivoPaintingicon,
+      photo: ma1,
     },
     {
       nameFile: "photo-marcelo2.png",
-      icon: "/img/ArquivoPainting.ico",
-      photo: "/img/fotos/ma2.png",
+      icon: arquivoPaintingicon,
+      photo: ma2,
     },
     {
       nameFile: "photo-marcelo3.png",
-      icon: "/img/ArquivoPainting.ico",
-      photo: "/img/fotos/ma4.png",
+      icon: arquivoPaintingicon,
+      photo: ma4,
     },
     {
       nameFile: "photo-sabrina.png",
-      icon: "/img/ArquivoPainting.ico",
-      photo: "/img/fotos/sa1.png",
+      icon: arquivoPaintingicon,
+      photo: sa1,
     },
     {
       nameFile: "photo-sabrina2.png",
-      icon: "/img/ArquivoPainting.ico",
-      photo: "/img/fotos/sa3.png",
+      icon: arquivoPaintingicon,
+      photo: sa3,
     },
     {
       nameFile: "photo-sabrina3.png",
-      icon: "/img/ArquivoPainting.ico",
-      photo: "/img/fotos/sa4.png",
+      icon: arquivoPaintingicon,
+      photo: sa4,
     },
   ];
 
@@ -57,17 +64,18 @@ const PhotoGallery = () => {
 
   return (
     <div className="photoGallery">
-      {db_pastas.map((e, index) => {
-        return (
-          <File
-            name={e.nameFile}
-            icon={e.icon}
-            onClick={() => handleOpenModal(e)}
-            color="#000"
-          />
-        );
-      })}
-
+      <div className="photoGalleryContent">
+        {db_pastas.map((e, index) => {
+          return (
+            <File
+              name={e.nameFile}
+              icon={e.icon}
+              onClick={() => handleOpenModal(e)}
+              color="#000"
+            />
+          );
+        })}
+      </div>
       <Modal
         open={modalOpen}
         onClose={handleCloseModal}

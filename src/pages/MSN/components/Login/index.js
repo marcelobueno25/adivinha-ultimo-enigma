@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Select, MenuItem } from "@mui/material";
 import SquareIcon from "@mui/icons-material/Circle";
+import msnText from "../../../../assets/icons/msnText.png";
+import msnLogin from "../../../../assets/icons/msnLogin.png";
 import "./styles.scss";
 
 const Login = ({ onLogin, errorMessage }) => {
@@ -17,12 +19,12 @@ const Login = ({ onLogin, errorMessage }) => {
       <div className="msn-login-container">
         <div className="msn-header">
           <div className="msn-header-logo">
-            <img src="/img/msnText.png" alt="MSN" />
+            <img src={msnText} alt="MSN" />
             <span>Messenger</span>
           </div>
         </div>
         <div className="msn-body">
-          <img src="/img/msnLogin.png" alt="MSN Logo" className="msn-logo" />
+          <img src={msnLogin} alt="MSN Logo" className="msn-logo" />
           <form onSubmit={handleSubmit}>
             <div className="msn-input-group">
               <label>E-mail address:</label>

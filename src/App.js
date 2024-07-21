@@ -4,6 +4,7 @@ import Desktop from "./pages/Windows95/Desktop";
 import StartMenu from "./pages/Windows95/StartMenu";
 import Preloader from "./components/Preloader";
 import { GlobalProvider } from "./Context/GlobalContext";
+import logosmall from "./assets/logosmall.png";
 import "./styles/global.scss";
 
 const App = () => {
@@ -32,7 +33,7 @@ const App = () => {
           </Routes>
           <div className="taskbar">
             <div className="start-button" onClick={toggleStartMenu}>
-              <img src="img/windows.png" alt="Iniciar" />
+              <img src={logosmall} alt="Iniciar" />
               <span>Iniciar</span>
             </div>
             <div className="taskbar-time">

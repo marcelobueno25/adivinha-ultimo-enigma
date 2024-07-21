@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.scss";
+import closeicon from "../../assets/icons/close.png";
 
 const CustomModal = ({
   name,
@@ -18,7 +19,7 @@ const CustomModal = ({
           <span className="modal-title">{name}</span>
           <div className="modal-controls">
             <button className="modal-button" onClick={onClose}>
-              <img src="/img/close.png" alt="Close" />
+              <img src={closeicon} alt="Close" />
             </button>
           </div>
         </div>

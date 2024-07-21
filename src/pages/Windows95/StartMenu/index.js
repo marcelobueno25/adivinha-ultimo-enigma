@@ -1,4 +1,11 @@
 import React from "react";
+import programFolder from "../../../assets/icons/ProgramFolder.ico";
+import folder from "../../../assets/icons/Folder.ico";
+import settings from "../../../assets/icons/Settings.ico";
+import search from "../../../assets/icons/Search.ico";
+import helpbook from "../../../assets/icons/Helpbook.ico";
+import programwait from "../../../assets/icons/Programwait.ico";
+import turnOffComputer from "../../../assets/icons/TurnOffComputer.ico";
 import "./styles.scss";
 
 const StartMenu = () => {
@@ -7,25 +14,25 @@ const StartMenu = () => {
       <div className="start-menu-header">Winlove 95</div>
       <ul>
         <li>
-          <img src="/img/ProgramFolder.ico" alt="Programs" /> Programas
+          <img src={programFolder} alt="Programs" /> Programas
         </li>
         <li>
-          <img src="/img/Folder.ico" alt="Documents" /> Documentos
+          <img src={folder} alt="Documents" /> Documentos
         </li>
         <li>
-          <img src="/img/Settings.ico" alt="Settings" /> Configurações
+          <img src={settings} alt="Settings" /> Configurações
         </li>
         <li>
-          <img src="/img/Search.ico" alt="Find" /> Procurar
+          <img src={search} alt="Find" /> Procurar
         </li>
         <li>
-          <img src="/img/Helpbook.ico" alt="Help" /> Ajuda
+          <img src={helpbook} alt="Help" /> Ajuda
         </li>
         <li>
-          <img src="/img/Programwait.ico" alt="Run" /> Executar...
+          <img src={programwait} alt="Run" /> Executar...
         </li>
         <li>
-          <img src="/img/TurnOffComputer.ico" alt="Shutdown" />
+          <img src={turnOffComputer} alt="Shutdown" />
           Desligar
         </li>
       </ul>

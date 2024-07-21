@@ -1,6 +1,16 @@
 import React, { useState } from "react";
 import Grid from "@mui/material/Grid";
 import { LOGIN_MSN } from "../../../../util/db";
+import iconUser2 from "../../../../assets/icons/iconUser2.ico";
+import borderUsericon from "../../../../assets/icons/borderUser.png";
+import addcicon from "../../../../assets/icons/add.png";
+import contactsicon from "../../../../assets/icons/contacts.png";
+import callicon from "../../../../assets/icons/call.png";
+import midiaicon from "../../../../assets/icons/midia.png";
+import gamesicon from "../../../../assets/icons/games.png";
+import blockicon from "../../../../assets/icons/block.png";
+import ma3 from "../../../../assets/photos/ma3.png";
+import sa2 from "../../../../assets/photos/sa2.png";
 import "./styles.scss";
 
 const Chat = () => {
@@ -49,11 +59,7 @@ const Chat = () => {
       <Grid className="msn-chat-header" container>
         <Grid item xs={12}>
           <div className="msn-contact-info">
-            <img
-              src="/img/iconUser2.ico"
-              alt="User"
-              className="contact-avatar"
-            />
+            <img src={iconUser2} alt="User" className="contact-avatar" />
             <div>
               <h5>{LOGIN_MSN.name_msn}</h5>
               <p>
@@ -65,12 +71,12 @@ const Chat = () => {
         </Grid>
         <Grid item xs={12}>
           <div className="msn-chat-config">
-            <img src="/img/msn/add.png" alt="Adicionar" />
-            <img src="/img/msn/contacts.png" alt="Contato" />
-            <img src="/img/msn/call.png" alt="Chamada" />
-            <img src="/img/msn/midia.png" alt="Midia" />
-            <img src="/img/msn/games.png" alt="Jogos" />
-            <img src="/img/msn/block.png" alt="Bloquear" />
+            <img src={addcicon} alt="Adicionar" />
+            <img src={contactsicon} alt="Contato" />
+            <img src={callicon} alt="Chamada" />
+            <img src={midiaicon} alt="Midia" />
+            <img src={gamesicon} alt="Jogos" />
+            <img src={blockicon} alt="Bloquear" />
           </div>
         </Grid>
       </Grid>
@@ -104,27 +110,19 @@ const Chat = () => {
         </div>
         <div className="msn-chat-content-avatars">
           <div className="topavatar">
-            <img
-              className="chatAvatarImg"
-              src="/img/fotos/ma3.png"
-              alt="user default"
-            />
+            <img className="chatAvatarImg" src={ma3} alt="Foto Marcelo" />
             <img
               className="chatAvatarBorder"
-              src="/img/msn/borderUser.png"
-              alt="borda"
+              src={borderUsericon}
+              alt="bordar"
             />
           </div>
           <div className="bottomavatar">
-            <img
-              className="chatAvatarImg"
-              src="/img/fotos/sa2.png"
-              alt="user default"
-            />
+            <img className="chatAvatarImg" src={sa2} alt="Foto Sabrina" />
             <img
               className="chatAvatarBorder"
-              src="/img/msn/borderUser.png"
-              alt="borda"
+              src={borderUsericon}
+              alt="bordar"
             />
           </div>
         </div>

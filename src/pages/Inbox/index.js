@@ -8,9 +8,9 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
-import inboxMgs from "../../assets/inboxMgs.PNG";
-import inboxMenu from "../../assets/inboxMenu.PNG";
-import IconMSG from "../../assets/msg.ico";
+import inboxMgs from "../../assets/listInbox.png";
+import inboxMenu from "../../assets/icons/iconsInbox.png";
+import IconMSG from "../../assets/icons/msg.ico";
 import "./styles.scss";
 import { LOGIN_MSN } from "../../util/db";
 

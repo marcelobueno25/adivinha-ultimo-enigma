@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import closeicon from "../../assets/icons/close.png";
 import "./styles.scss";
 
 const PasswordPrompt = ({ onSubmit, onCancel }) => {
@@ -16,7 +17,7 @@ const PasswordPrompt = ({ onSubmit, onCancel }) => {
           <span className="password-title"></span>
           <div className="password-controls">
             <button className="password-button" onClick={onCancel}>
-              <img src="/img/close.png" alt="Close" />
+              <img src={closeicon} alt="Close" />
             </button>
           </div>
         </div>

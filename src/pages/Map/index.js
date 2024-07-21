@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import L from "leaflet";
 import { Typography } from "@mui/material";
-import coracao from "../../assets/coracao.png";
+import coracao from "../../assets/icons/coracao.png";
 import Modal from "../../components/Modal";
 import { LOCATIONS_LIST, LOCATIONS_LIST_NEW } from "../../util/db";
 import { useGlobalContext } from "../../Context/GlobalContext";
