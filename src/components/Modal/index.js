@@ -12,7 +12,7 @@ const Modal = ({ name, open, onClose, children, close = true }) => {
           <div className="modal-controls">
             {close && (
               <button className="modal-button" onClick={onClose}>
-                <img src="/img/icons/close.png" alt="Close" />
+                <img src="/img/close.png" alt="Close" />
               </button>
             )}
           </div>

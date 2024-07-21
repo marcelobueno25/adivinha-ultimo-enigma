@@ -107,7 +107,7 @@ const Desktop = () => {
   };
 
   const handlePasswordSubmit = (password) => {
-    if (password === currentLevel.password) {
+    if (password.toLowerCase() === currentLevel.password.toLowerCase()) {
       setPasswordPrompt(false);
       setModalOpen(true);
       setGlobalVariable({ ...globalVariable, gallery: true });

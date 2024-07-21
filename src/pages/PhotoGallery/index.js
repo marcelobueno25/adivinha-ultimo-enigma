@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import File from "../Windows95/File";
-import { Modal, Box } from "@mui/material";
 import "./styles.scss";
+import Modal from "../../components/Modal";
 
 const initial = {
   name: "",
@@ -71,24 +71,11 @@ const PhotoGallery = () => {
       <Modal
         open={modalOpen}
         onClose={handleCloseModal}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+        name={currentLevel.nameFile}
+        aria-labelledby="modal-title"
+        aria-describedby="modal-description"
       >
-        <Box
-          sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: 600,
-            bgcolor: "background.paper",
-            border: "2px solid #000",
-            boxShadow: 24,
-            p: 4,
-          }}
-        >
-          <img className="photoGalleryPhoto" src={currentLevel?.photo} alt="" />
-        </Box>
+        <img className="photoGalleryPhoto" src={currentLevel?.photo} alt="" />
       </Modal>
     </div>
   );

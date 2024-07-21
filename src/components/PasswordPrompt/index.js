@@ -29,6 +29,11 @@ const PasswordPrompt = ({ onSubmit, onCancel }) => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                handleSubmit();
+              }
+            }}
           />
           <button onClick={handleSubmit}>OK</button>
         </div>

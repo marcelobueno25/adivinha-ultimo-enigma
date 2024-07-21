@@ -21,7 +21,7 @@ const Map = () => {
   const { globalVariable } = useGlobalContext();
   const [open, setOpen] = useState(false);
   const [modalInfo, setModalInfo] = useState({});
-  const [locais, setLocais] = useState({});
+  const [locais, setLocais] = useState([]);
 
   const handleOpen = (info) => {
     setModalInfo(info);
@@ -48,19 +48,20 @@ const Map = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           className="grayscale"
         />
-        {locais.map((e) => (
-          <Marker
-            position={e.position}
-            icon={heartIcon}
-            eventHandlers={{
-              click: () =>
-                handleOpen({
-                  name: e.name,
-                  info: e.info,
-                }),
-            }}
-          ></Marker>
-        ))}
+        {!!locais.length &&
+          locais.map((e) => (
+            <Marker
+              position={e.position}
+              icon={heartIcon}
+              eventHandlers={{
+                click: () =>
+                  handleOpen({
+                    name: e.name,
+                    info: e.info,
+                  }),
+              }}
+            ></Marker>
+          ))}
       </MapContainer>
 
       <Modal
