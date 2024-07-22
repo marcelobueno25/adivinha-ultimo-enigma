@@ -65,11 +65,24 @@ const Inbox = () => {
           </p>
         </div>
         <div className="contentMgsBody">
+          <p>Oi, paixão!</p>
           <p>
-            lorem lorem lo lorem lorem lorem lo lorem lorem lorem lo lorem lorem
-            lorem lo lorem lorem lorem lo lorem lorem lorem lo lorem lorem lorem
-            lo lorem lorem lorem lo lorem lorem lorem lo lorem lorem lorem lo
-            lorem lorem lorem lo lorem
+            Quero te dizer o quanto você significa para mim. Desde que nos
+            conhecemos, cada momento ao seu lado tem sido como uma página de um
+            diário dos anos 90, cheio de momentos inesquecíveis e felizes.
+            <br />
+            A cada dia que passa, fico mais encantado com você. Adoro como rimos
+            juntos, como conversamos sobre tudo e nada, e como nossos corações
+            estão sempre em sintonia.
+            <br />
+            Você é minha pessoa favorita, a luz dos meus dias e a melodia das
+            minhas noites. Obrigado por ser quem você é e por compartilhar sua
+            vida comigo.
+          </p>
+          <p>Te amo muito!</p>
+          <p>
+            Com carinho, <br />
+            Marcelo Bueno
           </p>
         </div>
       </div>

@@ -1,6 +1,26 @@
 .help {
-  display: flex;
   background-color: #fff;
-  height: 100%;
-  padding: 10px;
+  min-height: 100%;
+  padding: 20px;
+
+  .helpContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: start;
+    max-width: 800px;
+
+    p {
+      margin: 5px 0;
+    }
+
+    h1 {
+      margin-bottom: 0.5em;
+    }
+
+    ul {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useGlobalContext } from "../../../Context/GlobalContext";
 import File from "../File";
 import CustomModal from "../../../components/CustomModal";
@@ -31,7 +31,7 @@ const Desktop = () => {
   const [currentLevel, setCurrentLevel] = useState(initial);
   const [passwordPrompt, setPasswordPrompt] = useState(false);
 
-  const db_pastas = [
+  const db_pastas = useRef([
     {
       nameFile: "quiz.exe",
       nameWindows: "quiz.exe",
@@ -96,7 +96,17 @@ const Desktop = () => {
       url: "",
       password: "",
     },
-  ];
+  ]);
+
+  useEffect(() => {
+    const helpModal = db_pastas.current.find(
+      (file) => file.nameFile === "Ajuda"
+    );
+    if (helpModal) {
+      setCurrentLevel(helpModal);
+      setModalOpen(true);
+    }
+  }, []);
 
   const handleOpenModal = (level) => {
     setCurrentLevel(level);
@@ -125,7 +135,7 @@ const Desktop = () => {
 
   return (
     <div className="desktop">
-      {db_pastas.map((e, index) => {
+      {db_pastas.current.map((e, index) => {
         return (
           <File
             name={e.nameFile}
