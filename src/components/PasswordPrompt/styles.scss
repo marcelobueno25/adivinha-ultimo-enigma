@@ -68,8 +68,17 @@
     flex-grow: 1;
     overflow: auto;
 
-    h3 {
-      margin-bottom: 1em;
+    .password-content-texts {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+      gap: 10px;
+      margin-bottom: 25px;
+
+      img {
+        width: 120px;
+      }
     }
 
     input,
@@ -82,6 +91,8 @@
       box-sizing: border-box;
       box-shadow: inset -1px -1px #dedede, inset 1px 1px #000;
       border-color: #7b7b7b #fff #fff #7b7b7b;
+      width: 100%;
+      max-width: 150px;
     }
 
     button {
@@ -111,6 +122,33 @@
       color: black;
       border: 1px solid #000;
       margin-left: 5px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .custom-password-overlay {
+    .password-content {
+      .password-content-texts {
+        flex-direction: column;
+        text-align: center;
+
+        img {
+          width: 70px;
+        }
+      }
+
+      input,
+      input:hover,
+      input:focus,
+      input:active,
+      input:focus-visible {
+        max-width: 90%;
+      }
+
+      button {
+        width: 100%;
+      }
     }
   }
 }

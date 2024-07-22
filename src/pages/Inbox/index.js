@@ -41,7 +41,7 @@ const Inbox = () => {
                 <img src={IconMSG} alt="mensagem" width={20} />
               </TableCell>
               <TableCell>Marcelo Bueno</TableCell>
-              <TableCell>Bem-Vinda</TableCell>
+              <TableCell>Seu Amor</TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -61,7 +61,7 @@ const Inbox = () => {
             <strong>Para:</strong> Sabrina Kerpen ({LOGIN_MSN.email_sabrina})
           </p>
           <p>
-            <strong>Assunto:</strong> Bem vindo
+            <strong>Assunto:</strong> Seu Amor
           </p>
         </div>
         <div className="contentMgsBody">

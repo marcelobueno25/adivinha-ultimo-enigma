@@ -28,7 +28,11 @@ const Map = () => {
     setOpen(true);
   };
   const handleClose = () => setOpen(false);
-  const position = [-14.235, -51.9253];
+  const position = [-23.5505, -46.6333]; // Coordenadas para São Paulo
+  const bounds = [
+    [-24.5, -47.5], // Sudoeste
+    [-22.5, -45.5], // Nordeste
+  ];
 
   useEffect(() => {
     globalVariable.msn
@@ -37,11 +41,15 @@ const Map = () => {
   }, [globalVariable]);
 
   return (
-    <div>
+    <div className="mapContent">
       <MapContainer
         center={position}
-        zoom={4}
-        style={{ height: "100vh", width: "100%" }}
+        maxZoom={14}
+        zoom={10}
+        minZoom={8}
+        style={{ height: "100%", width: "100%" }}
+        maxBounds={bounds}
+        maxBoundsViscosity={1.0}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

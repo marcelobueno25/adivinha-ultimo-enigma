@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import closeicon from "../../assets/icons/close.png";
+import blockkey from "../../assets/icons/blockkey.png";
 import "./styles.scss";
 
 const PasswordPrompt = ({ onSubmit, onCancel }) => {
@@ -22,10 +23,17 @@ const PasswordPrompt = ({ onSubmit, onCancel }) => {
           </div>
         </div>
         <div className="password-content">
-          <h3>
-            bloqueado <br />
-            DIGITE A SENHA:
-          </h3>
+          <div className="password-content-texts">
+            <div>
+              <img src={blockkey} alt="Close" />
+            </div>
+            <div>
+              <p>
+                Para acessar esta pasta, é necessário digitar a senha. Por
+                favor, insira a senha abaixo:
+              </p>
+            </div>
+          </div>
           <input
             type="password"
             value={password}
