@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import File from "../Windows95/File";
 import Modal from "../../components/Modal";
-import arquivoPaintingicon from "../../assets/icons/ArquivoPainting.ico";
+import arquivoPaintingicon from "../../assets/icons/ArquivoPainting.png";
 import ma1 from "../../assets/photos/ma1.png";
 import ma2 from "../../assets/photos/ma2.png";
 import ma4 from "../../assets/photos/ma4.png";

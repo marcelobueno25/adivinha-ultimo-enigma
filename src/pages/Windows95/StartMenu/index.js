@@ -1,11 +1,11 @@
 import React from "react";
-import programFolder from "../../../assets/icons/ProgramFolder.ico";
-import folder from "../../../assets/icons/Folder.ico";
-import settings from "../../../assets/icons/Settings.ico";
-import search from "../../../assets/icons/Search.ico";
-import helpbook from "../../../assets/icons/Helpbook.ico";
-import programwait from "../../../assets/icons/Programwait.ico";
-import turnOffComputer from "../../../assets/icons/TurnOffComputer.ico";
+import programFolder from "../../../assets/icons/ProgramFolder.png";
+import folder from "../../../assets/icons/Folder.png";
+import settings from "../../../assets/icons/Settings.png";
+import search from "../../../assets/icons/Search.png";
+import helpbook from "../../../assets/icons/Helpbook.png";
+import programwait from "../../../assets/icons/Programwait.png";
+import turnOffComputer from "../../../assets/icons/TurnOffComputer.png";
 import "./styles.scss";
 
 const StartMenu = () => {

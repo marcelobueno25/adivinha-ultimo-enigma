@@ -10,13 +10,13 @@ import PhotoGallery from "../../PhotoGallery";
 import Help from "../../Help";
 import MSN from "../../MSN";
 import Inbox from "../../Inbox";
-import joyicon from "../../../assets/icons/Joy.ico";
-import earthicon from "../../../assets/icons/Earth.ico";
-import foldericon from "../../../assets/icons/Folder.ico";
-import programicon from "../../../assets/icons/Program.ico";
+import joyicon from "../../../assets/icons/Joy.png";
+import earthicon from "../../../assets/icons/Earth.png";
+import foldericon from "../../../assets/icons/Folder.png";
+import programicon from "../../../assets/icons/Program.png";
 import inboxicon from "../../../assets/icons/inbox.png";
 import msnicon from "../../../assets/icons/msn.png";
-import helpbookicon from "../../../assets/icons/Helpbook.ico";
+import helpbookicon from "../../../assets/icons/Helpbook.png";
 import "./styles.scss";
 
 const initial = {
