@@ -3,6 +3,13 @@
   justify-content: center;
   align-items: center;
   background-color: #ff6f61;
-  padding: 10%;
-  height: 100%;
+  padding: 10px;
+  min-height: 100%;
+}
+
+@media (max-width: 600px) {
+  .containerHome {
+    padding: 0;
+    background-color: #ffe4e1;
+  }
 }

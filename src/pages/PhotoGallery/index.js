@@ -80,8 +80,6 @@ const PhotoGallery = () => {
         open={modalOpen}
         onClose={handleCloseModal}
         name={currentLevel.nameFile}
-        aria-labelledby="modal-title"
-        aria-describedby="modal-description"
       >
         <img className="photoGalleryPhoto" src={currentLevel?.photo} alt="" />
       </Modal>

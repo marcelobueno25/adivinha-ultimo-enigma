@@ -76,8 +76,7 @@ const Map = () => {
         open={open}
         onClose={handleClose}
         name={modalInfo.name}
-        aria-labelledby="modal-title"
-        aria-describedby="modal-description"
+        icon={coracao}
       >
         <Typography id="modal-title" variant="h6" component="h2">
           {modalInfo.name}

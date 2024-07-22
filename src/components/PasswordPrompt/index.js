@@ -15,7 +15,10 @@ const PasswordPrompt = ({ onSubmit, onCancel }) => {
     <div className="custom-password-overlay">
       <div className="custom-password">
         <div className="password-title-bar">
-          <span className="password-title"></span>
+          <span className="password-title">
+            <img src={blockkey} alt="icone" />
+            Acesso Restrito
+          </span>
           <div className="password-controls">
             <button className="password-button" onClick={onCancel}>
               <img src={closeicon} alt="Close" />

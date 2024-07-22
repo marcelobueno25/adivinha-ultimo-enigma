@@ -24,3 +24,9 @@
 .MuiStepIcon-text {
   fill: #fff !important;
 }
+
+@media (max-width: 600px) {
+  .stepper-container {
+    display: none;
+  }
+}

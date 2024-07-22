@@ -103,10 +103,6 @@ export const GUESS_LIST = [
     word: "SORRISO",
   },
   {
-    hint: "Um desenho que tenho tatuado no corpo?",
-    word: "CORAGEM",
-  },
-  {
     hint: "Qual foi o filme que assistimos juntos que era tão ruim que me fez rir?",
     word: "WONKA",
   },

@@ -1,22 +1,7 @@
-.letter-input {
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  font-size: 24px;
-  border: 1px solid white;
-  background-color: black;
-  color: white;
-  margin: 0 2px;
-}
-
-.letter-input:disabled {
-  background-color: gray;
-  cursor: default;
-}
-
-.letter-input:disabled:focus,
-.letter-input:disabled:focus-visible,
-.letter-input:disabled:hover {
-  border: none !important;
-  outline: none !important;
+@media (max-width: 600px) {
+  .textFieldLetter {
+    input {
+      padding: 12px !important;
+    }
+  }
 }

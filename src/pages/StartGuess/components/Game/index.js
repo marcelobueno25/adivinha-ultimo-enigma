@@ -217,7 +217,30 @@ const Game = ({ handleNext }) => {
           </Button>
         </Modal>
       </div>
-      {open && <Confetti style={{ zIndex: 9999 }} numberOfPieces={100} />}
+      {open && (
+        <div
+          style={{
+            zIndex: 9999,
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <Confetti
+            style={{
+              zIndex: 9999,
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+            }}
+            numberOfPieces={100}
+          />
+        </div>
+      )}
     </>
   );
 };

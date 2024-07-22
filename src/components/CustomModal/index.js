@@ -4,6 +4,7 @@ import closeicon from "../../assets/icons/close.png";
 
 const CustomModal = ({
   name,
+  icon = null,
   url = "https://quizsecreto.netlify.app/",
   open,
   onClose,
@@ -16,7 +17,10 @@ const CustomModal = ({
     <div className="custom-modal-overlay">
       <div className="custom-modal">
         <div className="modal-title-bar">
-          <span className="modal-title">{name}</span>
+          <span className="modal-title">
+            {!!icon && <img src={icon} alt="icone" />}
+            {name}
+          </span>
           <div className="modal-controls">
             <button className="modal-button" onClick={onClose}>
               <img src={closeicon} alt="Close" />

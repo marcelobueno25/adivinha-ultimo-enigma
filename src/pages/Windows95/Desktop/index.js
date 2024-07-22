@@ -147,6 +147,7 @@ const Desktop = () => {
 
       <CustomModal
         name={currentLevel.nameWindows}
+        icon={currentLevel.icon}
         open={modalOpen}
         onClose={handleCloseModal}
         isWeb={currentLevel.isWeb}

@@ -1,8 +1,16 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { useGlobalContext } from "../../../../Context/GlobalContext";
+import { Box, Typography, Button } from "@mui/material";
 import { motion } from "framer-motion";
 
-const Reveal = () => {
+const Reveal = ({ handleNext }) => {
+  const { globalVariable, setGlobalVariable } = useGlobalContext();
+
+  const handleRestart = () => {
+    setGlobalVariable({ ...globalVariable, quizz: false });
+    handleNext();
+  };
+
   return (
     <Box
       component={motion.div}
@@ -23,10 +31,20 @@ const Reveal = () => {
         Você Desbloqueou o Código Secreto!
       </Typography>
       <Typography variant="h5" mb={5}>
-        Parabéns por acertar todas as perguntas! Aqui está o código secreto que
-        você desbloqueou: [Cifra de César - 13]. Use-o para decodificar outros
-        secretos! 😉
+        Aqui está o código secreto que você desbloqueou: [Cifra de César - 13].
+        Use-o para decodificar outros secretos! 😉
       </Typography>
+      <Button
+        className="menu-button primary"
+        variant="contained"
+        color="primary"
+        onClick={handleRestart}
+        component={motion.div}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        Voltar ao Inicio
+      </Button>
     </Box>
   );
 };

@@ -2,6 +2,7 @@ import React, { forwardRef } from "react";
 import { TextField } from "@mui/material";
 import { pink } from "@mui/material/colors";
 import { motion } from "framer-motion";
+import "./styles.scss";
 
 const LetterInput = forwardRef(
   ({ index, value, onKeyPress, onChange, onKeyUp, disabled }, ref) => {
@@ -21,6 +22,7 @@ const LetterInput = forwardRef(
       >
         <TextField
           inputRef={ref}
+          className="textFieldLetter"
           variant="outlined"
           inputProps={{
             maxLength: 1,
