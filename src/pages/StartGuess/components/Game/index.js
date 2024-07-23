@@ -206,7 +206,7 @@ const Game = ({ handleNext }) => {
           <Button
             onClick={() => {
               handleNext();
-              setGlobalVariable({ ...globalVariable, msn: true });
+              setGlobalVariable({ ...globalVariable, quizz: true });
             }}
             className="menu-button primary"
             variant="contained"
