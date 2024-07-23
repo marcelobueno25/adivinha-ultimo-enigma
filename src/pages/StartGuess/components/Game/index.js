@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
-import Confetti from "react-confetti";
 import Progress from "./components/Progress";
 import LetterInput from "./components/LetterInput";
 import Modal from "../../../../components/Modal";
@@ -217,30 +216,6 @@ const Game = ({ handleNext }) => {
           </Button>
         </Modal>
       </div>
-      {open && (
-        <div
-          style={{
-            zIndex: 9999,
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-          }}
-        >
-          <Confetti
-            style={{
-              zIndex: 9999,
-              position: "fixed",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-            }}
-            numberOfPieces={100}
-          />
-        </div>
-      )}
     </>
   );
 };

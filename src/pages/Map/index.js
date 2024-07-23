@@ -6,9 +6,18 @@ import { Typography } from "@mui/material";
 import coracao from "../../assets/icons/coracao.png";
 import Modal from "../../components/Modal";
 import { LOCATIONS_LIST, LOCATIONS_LIST_NEW } from "../../util/db";
+import Confetti from "react-confetti";
 import { useGlobalContext } from "../../Context/GlobalContext";
 import "leaflet/dist/leaflet.css";
 import "./styles.scss";
+
+const initial = {
+  name: "",
+  info: "",
+  img: "",
+  position: [0, 0],
+  confetti: false,
+};
 
 const heartIcon = new L.Icon({
   iconUrl: coracao,
@@ -20,7 +29,7 @@ const heartIcon = new L.Icon({
 const Map = () => {
   const { globalVariable } = useGlobalContext();
   const [open, setOpen] = useState(false);
-  const [modalInfo, setModalInfo] = useState({});
+  const [modalInfo, setModalInfo] = useState(initial);
   const [locais, setLocais] = useState([]);
 
   const handleOpen = (info) => {
@@ -62,11 +71,7 @@ const Map = () => {
               position={e.position}
               icon={heartIcon}
               eventHandlers={{
-                click: () =>
-                  handleOpen({
-                    name: e.name,
-                    info: e.info,
-                  }),
+                click: () => handleOpen(e),
               }}
             ></Marker>
           ))}
@@ -85,6 +90,31 @@ const Map = () => {
           {modalInfo.info}
         </Typography>
       </Modal>
+
+      {open && modalInfo?.confetti && (
+        <div
+          style={{
+            zIndex: 9999,
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <Confetti
+            style={{
+              zIndex: 9999,
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+            }}
+            numberOfPieces={100}
+          />
+        </div>
+      )}
     </div>
   );
 };
