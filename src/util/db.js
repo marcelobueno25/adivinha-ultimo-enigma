@@ -14,20 +14,6 @@ export const LOCATIONS_LIST = [
     confetti: false,
   },
   {
-    name: "Kiss Me",
-    info: "",
-    img: "",
-    position: [-23.644367518246103, -46.734530805231635],
-    confetti: false,
-  },
-  {
-    name: "Motel Frenesi",
-    info: "",
-    img: "",
-    position: [-23.644526984508566, -46.7312326168775],
-    confetti: false,
-  },
-  {
     name: "Roller Jam",
     info: "",
     img: "",

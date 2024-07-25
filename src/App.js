@@ -1,29 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Desktop from "./pages/Windows95/Desktop";
 import StartMenu from "./pages/Windows95/StartMenu";
-import Preloader from "./components/Preloader";
 import { GlobalProvider } from "./Context/GlobalContext";
 import logosmall from "./assets/logosmall.png";
+import Computer from "./pages/Computer";
 import "./styles/global.scss";
 
 const App = () => {
   const [startMenuOpen, setStartMenuOpen] = useState(false);
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Simular carregamento de dados
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000); // 3 segundos de carregamento
-  }, []);
+  const handleLoading = () => setLoading(false);
 
   const toggleStartMenu = () => {
     setStartMenuOpen(!startMenuOpen);
   };
 
   return loading ? (
-    <Preloader />
+    <Computer handle={handleLoading} />
   ) : (
     <GlobalProvider>
       <Router>
