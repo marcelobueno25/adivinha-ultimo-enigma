@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ReactComponent as ComputerIcon } from "../../assets/computer.svg";
+import clickSound from "../../assets/music/clickButton.mp3";
 import { motion } from "framer-motion";
 import Preloader from "../../components/Preloader";
 import "./styles.scss";
@@ -9,6 +10,8 @@ const Computer = ({ handle }) => {
   const [preloader, setPreloader] = useState(false);
 
   const handleActive = () => {
+    const audio = new Audio(clickSound);
+    audio.play();
     setActive(true);
     setTimeout(() => {
       setPreloader(true);
