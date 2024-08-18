@@ -75,9 +75,8 @@ const Inbox = () => {
             juntos, como conversamos sobre tudo e nada, e como nossos corações
             estão sempre em sintonia.
             <br />
-            Você é minha pessoa favorita, a luz dos meus dias e a melodia das
-            minhas noites. Obrigado por ser quem você é e por compartilhar sua
-            vida comigo.
+            Você, paixão, é a luz dos meus dias e a melodia das minhas noites.
+            Obrigado por ser quem você é e por compartilhar sua vida comigo.
           </p>
           <p>Te amo muito!</p>
           <p>

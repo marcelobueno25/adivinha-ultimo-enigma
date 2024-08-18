@@ -62,15 +62,22 @@ export const LOCATIONS_LIST = [
     position: [-23.595116010505077, -46.68666034260315],
     confetti: false,
   },
+  {
+    name: "Parabéns",
+    info: "Você conseguiu desvendar todos os enigmas 🎉 Mas ainda falta a ultima, e a frase  secreta é 'Sou trançado a mão e de madeira fina, Guardo coisas com bastante sina.' Espero que você goste! 😊",
+    img: "",
+    position: [-23.666002294931218, -46.8039530925205],
+    confetti: true,
+  },
 ];
 
 export const LOCATIONS_LIST_NEW = [
   ...LOCATIONS_LIST,
   {
-    name: "Unisa Santo Amaro",
-    info: "Você conseguiu desvendar todos os enigmas, parabéns! 🎉Agora, dê uma olhada embaixo da sua mesa e você encontrará um pacote branco. Abra-o com carinho. Espero que você goste! 😊",
+    name: "Home",
+    info: "Você conseguiu desvendar todos os enigmas, parabéns! </br>🎉 Mas ainda falta a ultima, e a frase para secreta é 'Sou trançado a mão e de madeira fina, Guardo coisas com bastante sina.' Espero que você goste! 😊",
     img: "",
-    position: [-23.653291304229484, -46.711689843988154],
+    position: [-23.666002294931218, -46.8039530925205],
     confetti: true,
   },
 ];

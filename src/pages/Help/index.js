@@ -8,8 +8,8 @@ const Help = () => {
         <h1>Bem-vinda ao WinLove 95!</h1>
         <p>
           Antes de você entrar nesse mundo retrô, tem algumas coisinhas que você
-          precisa saber. Prepare-se para uma viagem no tempo direto para os anos
-          90!
+          precisa saber. <br />
+          Prepare-se para uma viagem no tempo direto para os anos 90!
         </p>
         <p>
           <strong>Como Funciona:</strong>
