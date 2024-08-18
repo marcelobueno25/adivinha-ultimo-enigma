@@ -62,13 +62,6 @@ export const LOCATIONS_LIST = [
     position: [-23.595116010505077, -46.68666034260315],
     confetti: false,
   },
-  {
-    name: "Parabéns",
-    info: "Você conseguiu desvendar todos os enigmas 🎉 Mas ainda falta a ultima, e a frase  secreta é 'Sou trançado a mão e de madeira fina, Guardo coisas com bastante sina.' Espero que você goste! 😊",
-    img: "",
-    position: [-23.666002294931218, -46.8039530925205],
-    confetti: true,
-  },
 ];
 
 export const LOCATIONS_LIST_NEW = [
